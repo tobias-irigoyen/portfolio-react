@@ -164,7 +164,7 @@ export const translations = {
       badge: 'Abierto a oportunidades',
     },
     services: {
-      title: 'Qué hago',
+      title: '¿Qué ofrezco?',
       subtitle: 'Desarrollo de productos digitales de extremo a extremo, del concepto al lanzamiento.',
       items: [
         {
@@ -251,7 +251,7 @@ export const translations = {
     cta: {
       title: 'Trabajemos\njuntos',
       description:
-        'Actualmente estoy disponible para proyectos freelance y oportunidades de tiempo completo.\n\n Construyamos algo extraordinario.',
+        'Actualmente estoy disponible para proyectos freelance y oportunidades de tiempo completo.\n Construyamos algo extraordinario.',
       button: 'Iniciar proyecto',
       buttonSecondary: 'Descargar CV',
     },

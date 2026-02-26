@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Download } from 'lucide-react';
 import { useApp } from '../context/AppContext';
@@ -101,6 +100,7 @@ export function CTA() {
               lineHeight: 1.65,
               margin: '0 auto 40px',
               letterSpacing: '-0.01em',
+            whiteSpace: 'pre-line',
             }}>
               {t.description}
             </p>

@@ -60,7 +60,7 @@ export const projects: Project[] = [
       'https://tobiasirigoyen.dev/assets/nayra/4-min.png',
       'https://tobiasirigoyen.dev/assets/nayra/5-min.png'
     ],
-    tags: ['React', 'Sass','Figma', 'Design Systems', 'Accessibility'],
+    tags: ['Vue.js', 'Sass','Figma', 'Design Systems', 'Accessibility'],
     year: '2019',
     role: { en: 'Design Systems Lead', es: 'Líder de Design Systems' },
     link: 'https://nayra.coop',

@@ -3,55 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobías Irigoyen – React & Vue.js Frontend Developer en Argentina</title>
+  <title>Tobías Irigoyen – Frontend Developer</title>
 
-  <!-- SEO TAGS -->
-  <meta name="description" content="Frontend Developer especializado en React, Vue.js, JavaScript y diseño UI/UX. Desarrollo aplicaciones web modernas, rápidas y optimizadas para empresas y startups en Argentina y el mundo." />
-  <meta name="keywords" content="Frontend Developer, React, Vue.js, JavaScript, UI UX, Web Developer, Portfolio, Argentina" />
-  <meta name="author" content="Tobías Irigoyen" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://tusitio.com/" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Tobías Irigoyen | Frontend Developer" />
-  <meta property="og:description" content="Frontend Developer especializado en React, Vue.js y JavaScript. Desarrollo aplicaciones web modernas y optimizadas." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tusitio.com" />
-  <meta property="og:image" content="https://tusitio.com/preview.jpg" />
-  <meta property="og:locale" content="es_AR" />
-  
-  <!-- X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tobías Irigoyen – React/Vue.js Frontend Developer | UI/UX Designer" />
-  <meta name="twitter:description" content="Portfolio profesional de desarrollo web y diseño UI/UX." />
-  <meta name="twitter:image" content="https://tusitio.com/preview.jpg" />
-
-  <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-
-  <!-- Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tobías Irigoyen",
-      "jobTitle": "Frontend Developer",
-      "url": "https://tusitio.com",
-      "sameAs": [
-        "https://linkedin.com/in/tuusuario",
-        "https://github.com/tuusuario"
-      ]
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
     }
-  </script>
+
+    #initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0.3; }
+    }
+
+    .blink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: blink 3s infinite;
+    }
+
+    .motion-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: default;
+      padding: 0;
+      transition: opacity 0.2s ease;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+
+    .motion-btn:hover {
+      opacity: 0.8; /* simula whileHover */
+    }
+
+    .logo-box {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #5e6ad2, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-box span {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .name {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+  </style>
 </head>
-  <body>
-    <div id="root"></div>
+
+<body>
+
+  <div id="initial-loader">
+    <div class="blink">
+      <button 
+        class="motion-btn"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        <div class="logo-box">
+          <span>T</span>
+        </div>
+        <span class="name">Tobías Irigoyen</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="root"></div>
     <script type="module" src="./app/main.jsx"></script>
-  </body>
+
+</body>
 </html>

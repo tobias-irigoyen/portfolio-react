@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -134,6 +134,38 @@ function SectionDivider({ isDark }: { isDark: boolean }) {
 }
 
 export default function App() {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    // Hide the initial HTML loader when React is ready
+    const initialLoader = document.getElementById('initial-loader');
+    if (initialLoader) {
+      // Wait 4 seconds total before hiding
+      setTimeout(() => {
+        initialLoader.style.opacity = '0';
+        initialLoader.style.transition = 'opacity 0.5s ease-out';
+        setTimeout(() => {
+          initialLoader.style.display = 'none';
+          setIsReady(true);
+        }, 500);
+      }, 1500); // 3.5s wait + 0.5s fade out = 4s total
+    }
+  }, []);
+
+  if (!isReady) {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#000',
+        zIndex: 9998,
+      }} />
+    );
+  }
+
   return (
     <AppProvider>
       <PortfolioLayout />

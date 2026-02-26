@@ -157,9 +157,9 @@ export const translations = {
       role1: 'Frontend Developer',
       role2: 'UI/UX Designer',
       description:
-        'Creo experiencias digitales que combinan diseño hermoso con código de alto rendimiento — desde el concepto hasta producción.',
+        'Creo experiencias digitales que combinan diseño accesible con código de alto rendimiento — desde el concepto hasta producción.',
       cta: 'Ver mi trabajo',
-      ctaSecondary: 'Hablemos',
+      ctaSecondary: 'Contáctame',
       downloadCV: 'Descargar CV',
       badge: 'Abierto a oportunidades',
     },

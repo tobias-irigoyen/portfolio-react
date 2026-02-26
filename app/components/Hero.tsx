@@ -36,6 +36,13 @@ export function Hero() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Tobías Irigoyen - CV.pdf';
+    link.download = 'Tobías Irigoyen - CV.pdf';
+    link.click();
+  };
+
   return (
     <section style={{
       minHeight: '100vh',
@@ -235,7 +242,7 @@ export function Hero() {
           </motion.button>
 
           <motion.button
-            onClick={() => scrollTo('#contact')}
+            onClick={() => downloadCV()}
             whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             style={{

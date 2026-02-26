@@ -129,7 +129,7 @@ export const translations = {
       sent: 'Message sent!',
       info: {
         emailLabel: 'Email',
-        emailValue: 'hello@alexrivera.dev',
+        emailValue: 'tobias.irigoyen@gmail.com',
         locationLabel: 'Location',
         locationValue: 'Remote · Worldwide',
         responseLabel: 'Response time',

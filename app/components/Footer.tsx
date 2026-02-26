@@ -10,10 +10,8 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   const links = [
-    { icon: <Github size={16} />, href: '#', label: 'GitHub' },
-    { icon: <Twitter size={16} />, href: '#', label: 'Twitter' },
-    { icon: <Linkedin size={16} />, href: '#', label: 'LinkedIn' },
-    { icon: <Dribbble size={16} />, href: '#', label: 'Dribbble' },
+    { icon: <Github size={16} />, href: 'https://github.com/tobias-irigoyen/', label: 'GitHub' },
+    { icon: <Linkedin size={16} />, href: 'https://www.linkedin.com/in/tobiasirigoyen/', label: 'LinkedIn' }
   ];
 
   return (

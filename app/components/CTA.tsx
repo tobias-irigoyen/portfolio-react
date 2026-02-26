@@ -13,6 +13,13 @@ export function CTA() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+    const downloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/Tobías Irigoyen - CV.pdf';
+    link.download = 'Tobías Irigoyen - CV.pdf';
+    link.click();
+  };
+
   const lines = t.title.split('\n');
 
   return (
@@ -125,6 +132,7 @@ export function CTA() {
               </motion.button>
 
               <motion.button
+                onClick={() => downloadCV()}
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 style={{

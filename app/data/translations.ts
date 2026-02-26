@@ -217,7 +217,7 @@ export const translations = {
       categories: [
         {
           name: 'Frontend',
-          items: ['React', 'Vue.js', 'HTML5', 'CSS3', 'TypeScript', 'JavaScript'],
+          items: ['React', 'Vue.js', 'Next.js', 'JavaScript (ES6+)' ,'HTML5', 'CSS3', 'TypeScript'],
         },
         {
           name: 'Estilos',
@@ -238,8 +238,8 @@ export const translations = {
       ],
     },
     projects: {
-      title: 'Trabajo Selecto',
-      subtitle: 'Una selección curada de proyectos de los que estoy orgulloso.',
+      title: 'Trabajos',
+      subtitle: 'Una selección curada de casos de éxito.',
       viewProject: 'Ver detalles',
       visitSite: 'Visitar sitio',
       close: 'Cerrar',
@@ -261,7 +261,7 @@ export const translations = {
     },
     contact: {
       title: 'Contáctame',
-      subtitle: '¿Tienes un proyecto en mente o simplemente tienes alguna duda? \nMe encantaría saber de ti.',
+      subtitle: '¿Tienes un proyecto en mente o alguna idea que quieras desarrollar?\n\Me encantaría conversar contigo.',
       name: 'Nombre',
       email: 'Correo',
       message: 'Mensaje',

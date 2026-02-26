@@ -18,7 +18,7 @@ export function TechStack() {
           transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: '72px' }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px'  }}>
             <div style={{ height: '1px', width: '40px', background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' }} />
             <span style={{
               fontFamily: 'Inter, sans-serif',
@@ -54,7 +54,7 @@ export function TechStack() {
         </motion.div>
 
         {/* Categories */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', margin: '0 auto', maxWidth: '75%' }}>
           {t.categories.map((category, catIndex) => (
             <motion.div
               key={category.name}

@@ -23,6 +23,13 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [theme, setTheme] = useState<Theme>('dark');
   const [language, setLanguageState] = useState<Language>('en');
 
+  // Detect browser language on mount
+  useEffect(() => {
+    const browserLanguage = navigator.language || navigator.languages?.[0];
+    const detectedLanguage = browserLanguage?.startsWith('es') ? 'es' : 'en';
+    setLanguageState(detectedLanguage);
+  }, []);
+
   useEffect(() => {
     const root = document.documentElement;
     if (theme === 'dark') {

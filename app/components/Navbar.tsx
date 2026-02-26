@@ -10,6 +10,7 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -17,10 +18,50 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Intersection Observer for active section tracking
+  useEffect(() => {
+    const sections = ['work', 'services', 'stack', 'contact'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Only set active section if we're not at the top of the page
+            if (window.scrollY > 100) {
+              setActiveSection(entry.target.id);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Section is considered active when 50% is visible
+        rootMargin: '-80px 0px -80px 0px' // Account for navbar height
+      }
+    );
+
+    sections.forEach(sectionId => {
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    // Also check scroll position to reset active section when at top
+    const handleScroll = () => {
+      if (window.scrollY <= 100) {
+        setActiveSection('');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const navLinks = [
-    { label: t.work, href: '#work' },
     { label: t.services, href: '#services' },
     { label: t.stack, href: '#stack' },
+    { label: t.work, href: '#work' },
     { label: t.contact, href: '#contact' },
   ];
 
@@ -80,7 +121,7 @@ export function Navbar() {
                 alignItems: 'center',
                 justifyContent: 'center',
               }}>
-                <span style={{ color: '#fff', fontSize: '13px', fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>A</span>
+                <span style={{ color: '#fff', fontSize: '13px', fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>T</span>
               </div>
               <span style={{
                 fontFamily: 'Inter, sans-serif',
@@ -95,30 +136,34 @@ export function Navbar() {
 
             {/* Desktop Nav */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="hidden-mobile">
-              {navLinks.map(link => (
-                <motion.button
-                  key={link.href}
-                  onClick={() => scrollTo(link.href)}
-                  whileHover={{ opacity: 1 }}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: '6px 12px',
-                    borderRadius: '6px',
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: 450,
-                    color: isDark ? '#8a8f98' : '#6b7280',
-                    transition: 'color 0.2s ease',
-                    letterSpacing: '-0.01em',
-                  }}
-                  onMouseEnter={e => (e.currentTarget.style.color = isDark ? '#fff' : '#0a0a0a')}
-                  onMouseLeave={e => (e.currentTarget.style.color = isDark ? '#8a8f98' : '#6b7280')}
-                >
-                  {link.label}
-                </motion.button>
-              ))}
+              {navLinks.map(link => {
+                const sectionId = link.href.replace('#', '');
+                const isActive = activeSection === sectionId;
+                return (
+                  <motion.button
+                    key={link.href}
+                    onClick={() => scrollTo(link.href)}
+                    whileHover={{ opacity: 1 }}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer',
+                      padding: '6px 12px',
+                      borderRadius: '6px',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '14px',
+                      fontWeight: isActive ? '600' : '450',
+                      color: isActive ? '#fff' : (isDark ? '#8a8f98' : '#6b7280'),
+                      transition: 'color 0.2s ease',
+                      letterSpacing: '-0.01em',
+                    }}
+                    onMouseEnter={e => (e.currentTarget.style.color = '#fff', e.currentTarget.style.textDecoration = 'underline')}
+                    onMouseLeave={e => (e.currentTarget.style.color = isActive ? '#fff' : (isDark ? '#8a8f98' : '#6b7280'), e.currentTarget.style.textDecoration = 'none')}
+                  >
+                    {link.label}
+                  </motion.button>
+                );
+              })}
             </div>
 
             {/* Right controls */}
@@ -270,31 +315,36 @@ export function Navbar() {
               padding: '16px 24px 24px',
             }}
           >
-            {navLinks.map((link, i) => (
-              <motion.button
-                key={link.href}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: i * 0.05 }}
-                onClick={() => scrollTo(link.href)}
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '12px 0',
-                  background: 'none',
-                  border: 'none',
-                  borderBottom: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}`,
-                  cursor: 'pointer',
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '16px',
-                  fontWeight: 500,
-                  color: isDark ? '#fff' : '#0a0a0a',
-                }}
-              >
-                {link.label}
-              </motion.button>
-            ))}
+            {navLinks.map((link, i) => {
+                const sectionId = link.href.replace('#', '');
+                const isActive = activeSection === sectionId;
+                return (
+                  <motion.button
+                    key={link.href}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => scrollTo(link.href)}
+                    style={{
+                      paddingBottom: '4px',
+                      display: 'block',
+                      width: '100%',
+                      textAlign: 'left',
+                      padding: '12px 0',
+                      background: 'none',
+                      border: 'none',
+                      borderBottom: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)'}`,
+                      cursor: 'pointer',
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '16px',
+                      fontWeight: 500,
+                      color: isActive ? '#fff' : (isDark ? '#fff' : '#0a0a0a'),
+                    }}
+                  >
+                    {link.label}
+                  </motion.button>
+                );
+              })}
           </motion.div>
         )}
       </AnimatePresence>

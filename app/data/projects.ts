@@ -17,14 +17,14 @@ export const projects: Project[] = [
     slug: 'fiqus',
     title: 'Fiqus',
     shortDesc: {
-      en: 'High-converting SaaS landing page with motion design and a 38% signup rate improvement.',
+      en: 'Development of the corporate website for Fiqus, a cooperative company specializing in data science, artificial intelligence, blockchain, and fintech.',
       es: 'Desarrollo de sitio institucional de Fiqus, una empresa cooperativa de ciencia de datos, inteligencia artificial, blockchain y fintech.',
     },
     longDesc: {
-      en: `Launchpad is a landing page I designed and developed for a B2B SaaS startup launching their product. The brief was clear: maximize signups from cold traffic with a design that communicates trust, quality, and simplicity.\n\nI built the page with React and custom animation sequences using Motion. A/B tests were set up on 3 key sections, and the final variant achieved a 38% improvement in signup conversion rate compared to the original design.\n\nThe design language was carefully crafted to feel premium — inspired by top-tier SaaS products like Linear, Vercel, and Notion. Every micro-interaction was intentional.`,
+      en: `I developed the complete corporate website for the technology cooperative Fiqus, which includes multiple sections, a blog, and a multilingual translation system.\n\n
+      The site was built with React and TypeScript, using TailwindCSS for CSS styling, Lottie for SVG animations, and implementing the multilingual translation system with i18n.`,
       es: `Desarrollé el sitio institucional completo de la cooperativa de tecnología Fiqus, la cual consta de múltiples secciones, un blog y un sistema de traducción multiidioma.\n\n
-      El sitio fue desarrollado con React y TypeScript, utilizando TailwindCSS para los estilos CSS y Lottie para las animaciones SVG. El sistema de traducción multiidioma fue implementado con i18n.
-      `,
+      El sitio fue desarrollado con React y TypeScript, utilizando TailwindCSS para los estilos CSS, Lottie para las animaciones SVG y el sistema de traducción multiidioma con i18n.`,
     },
     images: [
       '/fiqus/1.jpg',
@@ -43,11 +43,12 @@ export const projects: Project[] = [
     slug: 'nayra',
     title: 'Nayra',
     shortDesc: {
-      en: 'Scalable design system with 80+ components used across multiple product teams.',
+      en: 'Development of the corporate website for Nayra, a cooperative technology company.',
       es: 'Desarrollo de sitio institucional de Nayra, una empresa cooperativa de tecnología.',
     },
     longDesc: {
-      en: `Figmify DS is a comprehensive design system I built for a mid-size SaaS company. It bridges the gap between design and development by providing both Figma component libraries and React implementations.\n\nThe system covers typography, color tokens, spacing, 80+ UI components, motion guidelines, and accessibility documentation. It was adopted by 4 product teams within the first month.\n\nBuilding Figmify DS reduced design-to-development handoff time by 60%, virtually eliminated visual inconsistencies across the product suite, and gave engineers a reliable, well-documented component library to build on.`,
+      en: `I worked on the design and development in Vue.js of the corporate website for Nayra, a cooperative technology company.\n\n
+      The site includes a Home, About Us, Projects, and Contact section. It also features a language selector.`,
       es: `Trabajé en el diseño y desarrollo en Vue.js del sitio institucional de Nayra, una empresa cooperativa de tecnología. \n\n
       El sitio consta de una sección de Inicio, Sobre nosotros, Trabajos y Contacto. Además cuenta con un selector de idiomas.`
  
@@ -66,19 +67,23 @@ export const projects: Project[] = [
     link: 'https://nayra.coop',
   },
   {
-    id: 6,
+    id: 3,
     slug: 'pokedex',
     title: 'Pokedex',
     shortDesc: {
-      en: 'High-conversion e-commerce platform with personalized shopping experiences.',
+      en: 'The Pokédex project consists of a Pokémon search engine, where they can be found by name, number, or type through the consumption of a public API.',
       es: 'El proyecto Pokedex consiste en un buscador de Pokemons, los cuales se pueden encontrar según su nombre, número o tipo a través del consumo de una API pública.',
     },
     longDesc: {
-      en: `ShopWave is a modern e-commerce platform built for independent brands looking to compete with larger retailers. The project focused heavily on conversion optimization and personalization.\n\nI led the frontend architecture and redesigned the checkout flow, reducing cart abandonment by 28%. The UI was built with React, TypeScript, and TailwindCSS, following a custom design system I created in Figma.\n\nThe platform includes an A/B testing framework I built, which allowed the team to run experiments continuously and iterate on key UX decisions. Average order value increased by 22% within 3 months of launch.`,
-      es: `En el proyecto Pokedex trabajé en el diseño y desarrollo en Vue.js. Consiste en un buscador de Pokemons, los cuales se pueden encontrar según su nombre, número o tipo. 
- Cada Pokemon posee su información detallada, como su tipo, habilidades, movimientos y más. Presionando una tarjeta de Pokemon se puede ver su información detallada. 
- El sitio consta de una sección de Inicio, Buscador y Listado de Pokemons. El buscador cuenta con un filtro por tipo y un buscador por nombre y número. El listado cuenta con un paginador y una selección de cantidad de Pokemons a mostrar. 
- También tiene un indicador de carga de Pokemons y un indicador de error en caso de que no se encuentre el Pokemon.`,
+      en: `In the Pokédex project, I worked on the design and development in Vue.js. It consists of a Pokémon search engine, where they can be found by name, number, or type.\n\n
+      Each Pokémon has detailed information, such as its type, abilities, moves, and more. By clicking on a Pokémon card, its detailed information can be viewed.\n\n
+      The site includes a Home, Search, and Pokémon List section. The search feature has a type filter and a search by name and number. The list includes pagination and an option to select the number of Pokémon to display.\n\n
+      It also has a Pokémon loading indicator and an error indicator in case a Pokémon is not found.
+`,
+      es: `En el proyecto Pokedex trabajé en el diseño y desarrollo en Vue.js. Consiste en un buscador de Pokemons, los cuales se pueden encontrar según su nombre, número o tipo.\n\n\
+      Cada Pokemon posee su información detallada, como su tipo, habilidades, movimientos y más. Presionando una tarjeta de Pokemon se puede ver su información detallada.\n\n\
+      El sitio consta de una sección de Inicio, Buscador y Listado de Pokemons. El buscador cuenta con un filtro por tipo y un buscador por nombre y número. El listado cuenta con un paginador y una selección de cantidad de Pokemons a mostrar.\n\n\
+      También tiene un indicador de carga de Pokemons y un indicador de error en caso de que no se encuentre el Pokemon.`,
     },
     images: [
       'https://tobiasirigoyen.dev/assets/pokedex/logo-min.jpg',
@@ -99,11 +104,13 @@ export const projects: Project[] = [
     slug: 'fit',
     title: 'FIT - Flujo Intercooperativo de Trabajo',
     shortDesc: {
-      en: 'Mobile-first travel companion app with smart itinerary planning and offline maps.',
+      en: 'Corporate website of the FIT. It is an inter-cooperative network made up of technology companies from the Federación Argentina de Cooperativas de Trabajo de Tecnología, Innovación y Conocimiento (FIT).',
       es: 'Sitio institucional del FIT. Es una red intercooperativa conformada por empresas tecnológicas de la Federación Argentina de Cooperativas de Trabajo de Tecnología, Innovación y Conocimiento.',
     },
     longDesc: {
-      en: `Nomad is a travel companion app built for digital nomads and frequent travelers. The goal was to create a delightful, frictionless experience for building and sharing travel itineraries.\n\nI designed the entire UI/UX from scratch — conducting 15+ user interviews, building low-fidelity wireframes in Figma, and iterating through 3 rounds of usability testing. The frontend was built with Vue.js and delivered as a PWA.\n\nThe app achieved a 4.8/5 App Store rating on launch, with users specifically praising the intuitive onboarding flow and the beautiful offline map experience.`,
+      en: `The FIT project involved the design and development in Vue.js of the corporate website for FIT – Flujo Intercooperativo de Trabajo. This platform is an inter-cooperative network made up of technology companies belonging to the Federación Argentina de Cooperativas de Trabajo de Tecnología, Innovación y Conocimiento.\n\n
+The site features a responsive design and layout, presenting the description and operation of the network, the technologies used, success stories, and a contact form.
+`,
       es: `El proyecto del FIT consistió en el diseño y desarrollo en Vue.js del sitio institucional del FIT - Flujo Intercooperativo de Trabajo. Este espacio es una red intercooperativa conformada por empresas tecnológicas pertenecientes a la Federación Argentina de Cooperativas de Trabajo de Tecnología, Innovación y Conocimiento.\n\n 
       El sitio posee un diseño y maquetado responsive y muestra la descripción y funcionamiento del espacio, las tecnologías utilizadas, casos de éxito y un formulario de contacto.`,
     },
@@ -127,15 +134,18 @@ export const projects: Project[] = [
     slug: 'api-covid-19',
     title: 'API Covid 19',
     shortDesc: {
-      en: 'Analytics SaaS platform with real-time data visualization and team collaboration.',
+      en: 'Platform developed to display statistics about the impact of the COVID-19 virus in Argentina.',
       es: 'Plataforma desarrollada para mostrar estadísticas acerca del impacto del virus Covid 19 en Argentina.',
     },
     longDesc: {
-      en: `Orbit is a next-generation analytics platform designed for data-driven teams. The challenge was to present complex datasets in an intuitive way without overwhelming users.\n\nI led the end-to-end design and frontend development — starting with user research, competitive analysis, and wireframing, then moving into a full component library built on React and TypeScript.\n\nKey achievements include a 40% reduction in time-to-insight for users, a reusable chart component library, and a design system that scaled to 50+ components. The app handles real-time WebSocket data streams with zero perceived latency.`,
-      es: `Este proyecto se desarrolló en el marco de la pandemia por el COVID 19 en el año 2020.\n
- Contó con un equipo formado por desarrolladores Back-end, Front-end y Diseñadores UI/UX.\n
- Los desarrolladores Back-end se encargaron de la API REST que consumía datos de la API de la Organización Mundial de la Salud (OMS) y la API de la Organización Mundial de la Salud (OMS). \n
- Los desarrolladores Front-end se encargaron de la interfaz de usuario y la experiencia del usuario. `,
+      en: `This project was developed during the COVID-19 pandemic in 2020.\n\n
+      It involved a team of Back-end and Front-end developers, as well as UI/UX designers.\n\n
+      The Back-end developers were responsible for the REST API, which consumed data from the World Health Organization (WHO) API.\n\n
+      The Front-end developers handled the user interface and user experience.`,
+      es: `Este proyecto se desarrolló en el marco de la pandemia por el COVID 19 en el año 2020.\n\n
+      Contó con un equipo formado por desarrolladores Back-end, Front-end y Diseñadores UI/UX.\n\n
+      Los desarrolladores Back-end se encargaron de la API REST que consumía datos de la API de la Organización Mundial de la Salud (OMS) y la API de la Organización Mundial de la Salud (OMS). \n\n
+      Los desarrolladores Front-end se encargaron de la interfaz de usuario y la experiencia del usuario. `,
       
     },
     images: [
@@ -151,15 +161,16 @@ export const projects: Project[] = [
     link: 'https://tobias-irigoyen.github.io/landing-api-covid/',
   },
   {
-    id: 5,
+    id: 6,
     slug: 'proyecto-aurora',
     title: 'Proyecto Aurora',
     shortDesc: {
-      en: 'High-conversion e-commerce platform with personalized shopping experiences.',
+      en: 'Proyecto Aurora is a Real Estate project that aims to offer an online property purchasing experience in Panama and various countries across Latin America.',
       es: 'Proyecto Aurora es un proyecto del segmento Real Estate el cual busca ofrecer una experiencia de inicio de compra de propiedades online en Panamá y distintos países de LATAM.',
     },
     longDesc: {
-      en: `ShopWave is a modern e-commerce platform built for independent brands looking to compete with larger retailers. The project focused heavily on conversion optimization and personalization.\n\nI led the frontend architecture and redesigned the checkout flow, reducing cart abandonment by 28%. The UI was built with React, TypeScript, and TailwindCSS, following a custom design system I created in Figma.\n\nThe platform includes an A/B testing framework I built, which allowed the team to run experiments continuously and iterate on key UX decisions. Average order value increased by 22% within 3 months of launch.`,
+      en: `Proyecto Aurora is a Real Estate project, in which I worked on the development of the design system, creating atoms, components, and layouts.\n\n
+      These elements were applied to the Home, Building, Units, and Contact views.`,
       es: `Proyecto Aurora es un proyecto del segmento Real Estate, en el cual trabajé en el desarrollo del sistema de diseño, creando átomos, componentes y layouts.\n\n
       Estos elementos los apliqué en las vistas de Inicio, Edificio, Unidades y Contacto.`,
     },
@@ -187,32 +198,36 @@ export const projects: Project[] = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah Mitchell',
-    role: { en: 'CEO at Orbit Systems', es: 'CEO en Orbit Systems' },
-    avatar: 'https://images.unsplash.com/photo-1712174766230-cb7304feaafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3b21hbiUyMGRldmVsb3BlciUyMHBvcnRyYWl0fGVufDF8fHx8MTc3MjAzMTc2MHww&ixlib=rb-4.1.0&q=80&w=200',
+    name: 'Christian Pranteda',
+    role: { en: 'Team Leader at Ethofy', es: 'Team Leader en Ethofy' },
+    avatar: '/testimonials/christian-pranteda.jpg',
     quote: {
-      en: "Alex delivered beyond expectations. The dashboard they built is not only beautiful but handles complex data in a way our users genuinely love. Attention to detail at every level.",
-      es: "Alex entregó más allá de las expectativas. El dashboard que construyeron no solo es hermoso sino que maneja datos complejos de una manera que nuestros usuarios genuinamente aman. Atención al detalle en cada nivel.",
+      en: "Tobi is the best layout developer I’ve worked with and an outstanding teammate. Always willing to help and learn. A true asset to any team.",
+      es: "Tobi es el mejor maquetador con el que trabajé y un excelentísimo compañero. Siempre dispuesto a ayudar y aprender. Un lujo tenerlo en cualquier equipo.",
     },
   },
   {
     id: 2,
-    name: 'Marcus Chen',
-    role: { en: 'Product Lead at Nomad Inc.', es: 'Product Lead en Nomad Inc.' },
-    avatar: 'https://images.unsplash.com/photo-1629507208649-70919ca33793?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdCUyMGJ1c2luZXNzfGVufDF8fHx8MTc3MjAzMDMzOXww&ixlib=rb-4.1.0&q=80&w=200',
+    name: 'Cristian Martinez',
+    role: { en: 'Tech leader at Ethofy', es: 'Tech Lider en Ethofy' },
+    avatar: '/testimonials/cristian-martinez.jpg',
     quote: {
-      en: "Working with Alex was a game-changer for our product. They have a rare ability to think both as a designer and an engineer simultaneously. Our app launch was a huge success — 4.8 stars.",
-      es: "Trabajar con Alex fue un cambio de juego para nuestro producto. Tienen una rara habilidad de pensar tanto como diseñador como ingeniero simultáneamente. El lanzamiento de nuestra app fue un gran éxito — 4.8 estrellas.",
+      en: "I had the privilege of working with Tobías as a technical lead on a project, and I can say with complete confidence that he is an excellent designer. His experience in layout development and UI/UX design is reflected in work that is always polished, well thought out, and aligned with the product’s goals. He is a reliable, creative professional with a consistently positive attitude—qualities that make him a valuable asset to any team.",
+      es: "Tuve el privilegio de trabajar con Tobías como líder técnico en un proyecto, y puedo decir con total confianza que es un excelente diseñador. Su experiencia en maquetado y diseño UI/UX se refleja en entregas siempre prolijas, bien pensadas y alineadas con los objetivos del producto. Es un profesional confiable, creativo y con una actitud siempre positiva, cualidades que lo convierten en un gran aporte para cualquier equipo de trabajo.",
     },
   },
   {
     id: 3,
-    name: 'Priya Sharma',
-    role: { en: 'Design Director at ShopWave', es: 'Directora de Diseño en ShopWave' },
-    avatar: 'https://images.unsplash.com/photo-1712174766230-cb7304feaafe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=200',
+    name: 'Gabriela Di Grazia',
+    role: { en: 'Sr. Frontend Developer at Ethofy', es: 'Frontend Developer Sr. en Ethofy' },
+    avatar: '/testimonials/gabriela-di-grazia.jpg',
     quote: {
-      en: "The design system Alex built became the backbone of our entire product suite. Clean, scalable, and beautifully documented. Onboarding new designers became effortless after that.",
-      es: "El sistema de diseño que construyó Alex se convirtió en la columna vertebral de toda nuestra suite de productos. Limpio, escalable y bellamente documentado. La incorporación de nuevos diseñadores se volvió sin esfuerzo después de eso.",
+      en: `I had the pleasure of working with Tobías on a project at 1950Labs, and he is a professional who stands out both for his technical expertise in front-end development and for his UI/UX design skills.\n
+      During the time we were on the same team, he proved to be proactive, detail-oriented, and always willing to collaborate. He has a great ability to identify opportunities to improve the user experience and doesn’t hesitate to propose creative and well-founded solutions. In addition, he has an excellent attitude and contributes positively to the team dynamic.\n
+      Working with Tobías is synonymous with quality, commitment, and great energy. Without a doubt, a great asset to any development team.`,
+      es: `Tuve el gusto de trabajar con Tobías en un proyecto en 1950Labs, y es un profesional que destaca tanto por su dominio técnico en front-end como por sus habilidades en diseño UI/UX.\n
+      Durante el tiempo que compartimos equipo, demostró ser proactivo, detallista y siempre dispuesto a colaborar. Tiene una gran capacidad para detectar oportunidades de mejora en la experiencia del usuario, y no duda en proponer soluciones creativas y bien fundamentadas. Además, es una persona con excelente disposición, que suma positivamente a la dinámica del grupo.\n
+      Trabajar con Tobías es sinónimo de calidad, compromiso y buena energía. Sin dudas, un gran valor para cualquier equipo de desarrollo.`,
     },
   },
 ];

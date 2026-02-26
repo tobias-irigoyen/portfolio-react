@@ -40,7 +40,7 @@ export function Footer() {
             alignItems: 'center',
             justifyContent: 'center',
           }}>
-            <span style={{ color: '#fff', fontSize: '11px', fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>A</span>
+            <span style={{ color: '#fff', fontSize: '11px', fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>T</span>
           </div>
           <span style={{
             fontFamily: 'Inter, sans-serif',

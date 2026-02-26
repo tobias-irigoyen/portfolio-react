@@ -80,6 +80,10 @@ export const translations = {
           items: ['TailwindCSS', 'Bootstrap', 'Sass', 'CSS Modules'],
         },
         {
+          name: 'AI Tools',
+          items: ['Open Code', 'ChatGPT', 'Claude', 'Gemini', 'DeepSeek','Google Stitch','Figma Make'],
+        },
+        {
           name: 'Testing',
           items: ['Jest', 'Vitest', 'Cypress', 'Testing Library'],
         },
@@ -113,7 +117,7 @@ export const translations = {
     },
     testimonials: {
       title: 'What people say',
-      subtitle: 'From clients and collaborators across the world.',
+      subtitle: 'From colleagues who know me',
     },
     contact: {
       title: 'Get in touch',
@@ -145,7 +149,7 @@ export const translations = {
   },
   es: {
     nav: {
-      work: 'Trabajo',
+      work: 'Trabajos',
       services: 'Servicios',
       stack: 'Stack',
       contact: 'Contacto',
@@ -224,6 +228,10 @@ export const translations = {
           items: ['TailwindCSS', 'Bootstrap', 'Sass', 'CSS Modules'],
         },
         {
+          name: 'IA Tools',
+          items: ['Open Code', 'ChatGPT', 'Claude', 'Gemini', 'DeepSeek','Google Stitch','Figma Make'],
+        },
+        {
           name: 'Testing',
           items: ['Jest', 'Vitest', 'Cypress', 'Testing Library'],
         },
@@ -257,7 +265,7 @@ export const translations = {
     },
     testimonials: {
       title: 'Reseñas',
-      subtitle: 'De clientes y colaboradores de todo el mundo.',
+      subtitle: 'De colaboradores que me conocen',
     },
     contact: {
       title: 'Contáctame',

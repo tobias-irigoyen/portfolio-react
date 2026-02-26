@@ -369,7 +369,6 @@ const handleSubmit = async (e: React.FormEvent) => {
               </motion.div>
             ))}
           </motion.div>
-          <button onClick={testVars}>Test Vars</button>
         </div>
       </div>
 

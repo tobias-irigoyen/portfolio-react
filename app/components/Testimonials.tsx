@@ -10,7 +10,7 @@ export function Testimonials() {
   const t = translations[language].testimonials;
 
   return (
-    <section style={{ padding: '120px 24px', position: 'relative' }}>
+    <section id="testimonials" style={{ padding: '120px 24px', position: 'relative' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <motion.div

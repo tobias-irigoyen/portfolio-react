@@ -20,7 +20,7 @@ export function Contact() {
     const hours = gmt3Time.getHours();
     
     // Set status based on time: 'Inactive' after 20:00 and 'Active' before
-    return hours >= 10 ? t.inactiveStatus : t.activeStatus;
+    return hours >= 22 ? t.inactiveStatus : t.activeStatus;
   };
 
   
@@ -88,7 +88,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   };
 
   const infoItems = [
-    { icon: <Mail size={16} />, label: t.info.emailLabel, value: t.info.emailValue },
+    { icon: <Mail size={16} />, label: t.info.emailLabel, value: t.info.emailValue, subject: t.info.emailSubject },
     { icon: <MapPin size={16} />, label: t.info.locationLabel, value: t.info.locationValue },
     { icon: <Clock size={16} />, label: t.info.responseLabel, value: t.info.responseValue },
     { icon: getCurrentStatus() === t.activeStatus ? <Zap size={16} /> : <MessageCircleX size={16} />, label: t.info.statusLabel, value: getCurrentStatus(), accent: true },
@@ -342,9 +342,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                   height: '36px',
                   borderRadius: '9px',
                   flexShrink: 0,
-                  background: (getCurrentStatus() === t.activeStatus && item.accent) ? 'rgba(20, 156, 63, .2)' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? 'rgba(223, 39, 39, .2)' : 'transparent',
+                  background: (getCurrentStatus() === t.activeStatus && item.accent) ? 'rgba(20, 156, 63, .2)' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? 'rgba(223, 39, 39, .2)' : 'rgba(3, 26, 233, 0.09)',
                   color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.  inactiveStatus && item.accent) ? '#da1b1bff' : '#5e6ad2',
-                  border: (getCurrentStatus() === t.activeStatus && item.accent) ? '1px solid #5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '1px solid #e44747' : '1px solid #5e6ad2',
+                  border: (getCurrentStatus() === t.activeStatus && item.accent) ? '1px solid #5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '1px solid #e44747' : '1px solid #8087ceff',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
@@ -363,15 +363,30 @@ const handleSubmit = async (e: React.FormEvent) => {
                   }}>
                     {item.label}
                   </p>
-                  <p style={{
-                    fontFamily: 'Inter, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '#e44747ff' : isDark ? '#8a8f98' : '#6b6e72ff',
-                    letterSpacing: '-0.01em',
-                  }}>
-                    {item.value}
-                  </p>
+                  {item.subject ? (
+                    <a href={`mailto:${item.value}?subject=${item.subject}`}
+                      style={{
+                        fontFamily: 'Inter, sans-serif',
+                        fontSize: '14px',
+                        fontWeight: 500,
+                        color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '#e44747ff' : isDark ? '#8a8f98' : '#6b6e72ff',
+                        letterSpacing: '-0.01em',
+                        textDecoration: 'none',
+                      }}
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    <p style={{
+                      fontFamily: 'Inter, sans-serif',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '#e44747ff' : isDark ? '#8a8f98' : '#6b6e72ff',
+                      letterSpacing: '-0.01em',
+                    }}>
+                      {item.value}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}

@@ -20,7 +20,7 @@ export function Navbar() {
 
   // Intersection Observer for active section tracking
   useEffect(() => {
-    const sections = ['work', 'services', 'stack', 'contact'];
+    const sections = ['work', 'services', 'stack', 'testimonials', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -62,6 +62,7 @@ export function Navbar() {
     { label: t.services, href: '#services' },
     { label: t.stack, href: '#stack' },
     { label: t.work, href: '#work' },
+    { label: t.testimonials, href: '#testimonials' },
     { label: t.contact, href: '#contact' },
   ];
 

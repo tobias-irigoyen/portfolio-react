@@ -148,7 +148,7 @@ export default function App() {
           initialLoader.style.display = 'none';
           setIsReady(true);
         }, 500);
-      }, 1500); // 3.5s wait + 0.5s fade out = 4s total
+      }, 1000);
     }
   }, []);
 

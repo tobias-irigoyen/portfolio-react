@@ -121,7 +121,7 @@ export const translations = {
     },
     contact: {
       title: 'Get in touch',
-      subtitle: "Have a project in mind or an idea you’d like to develop?\n\I'd love to hear from you.",
+      subtitle: "Have a project in mind or an idea you'd like to develop?\n\I'd love to hear from you.",
       name: 'Name',
       email: 'Email',
       message: 'Message',
@@ -131,6 +131,8 @@ export const translations = {
       send: 'Send message',
       sending: 'Sending...',
       sent: 'Message sent!',
+      activeStatus: 'Active',
+      inactiveStatus: 'Inactive',
       info: {
         emailLabel: 'Email',
         emailValue: 'tobias.irigoyen@gmail.com',
@@ -269,7 +271,7 @@ export const translations = {
     },
     contact: {
       title: 'Contáctame',
-      subtitle: '¿Tienes un proyecto en mente o alguna idea que quieras desarrollar?\n\Me encantaría conversar contigo.',
+      subtitle: '¿Tienes un proyecto en mente o simplemente tienes alguna duda? \nMe encantaría saber de ti.',
       name: 'Nombre',
       email: 'Correo',
       message: 'Mensaje',
@@ -279,6 +281,8 @@ export const translations = {
       send: 'Enviar mensaje',
       sending: 'Enviando...',
       sent: '¡Mensaje enviado!',
+      activeStatus: 'Activo',
+      inactiveStatus: 'Inactivo',
       info: {
         emailLabel: 'Email',
         emailValue: 'tobias.irigoyen@gmail.com',

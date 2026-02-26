@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Mail, MapPin, Clock, Zap, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Clock, Zap, Send, CheckCircle, MessageCircleX } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { translations } from '../data/translations';
 import emailjs from '@emailjs/browser';
@@ -11,6 +11,17 @@ export function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
   const [focused, setFocused] = useState<string | null>(null);
+
+  // Function to get current status based on GMT-3 time
+  const getCurrentStatus = () => {
+    const now = new Date();
+    // Convert to GMT-3
+    const gmt3Time = new Date(now.toLocaleString("en-US", {timeZone: "America/Argentina/Buenos_Aires"}));
+    const hours = gmt3Time.getHours();
+    
+    // Set status based on time: 'Inactive' after 20:00 and 'Active' before
+    return hours >= 10 ? t.inactiveStatus : t.activeStatus;
+  };
 
   
 const handleSubmit = async (e: React.FormEvent) => {
@@ -80,7 +91,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     { icon: <Mail size={16} />, label: t.info.emailLabel, value: t.info.emailValue },
     { icon: <MapPin size={16} />, label: t.info.locationLabel, value: t.info.locationValue },
     { icon: <Clock size={16} />, label: t.info.responseLabel, value: t.info.responseValue },
-    { icon: <Zap size={16} />, label: t.info.statusLabel, value: t.info.statusValue, accent: true },
+    { icon: getCurrentStatus() === t.activeStatus ? <Zap size={16} /> : <MessageCircleX size={16} />, label: t.info.statusLabel, value: getCurrentStatus(), accent: true },
   ];
 
   return (
@@ -331,16 +342,12 @@ const handleSubmit = async (e: React.FormEvent) => {
                   height: '36px',
                   borderRadius: '9px',
                   flexShrink: 0,
-                  background: item.accent
-                    ? 'rgba(94,210,130,0.12)'
-                    : (isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)'),
-                  border: `1px solid ${item.accent
-                    ? 'rgba(94,210,130,0.25)'
-                    : (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)')}`,
+                  background: (getCurrentStatus() === t.activeStatus && item.accent) ? 'rgba(20, 156, 63, .2)' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? 'rgba(223, 39, 39, .2)' : 'transparent',
+                  color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.  inactiveStatus && item.accent) ? '#da1b1bff' : '#5e6ad2',
+                  border: (getCurrentStatus() === t.activeStatus && item.accent) ? '1px solid #5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '1px solid #e44747' : '1px solid #5e6ad2',
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  color: item.accent ? '#5ed282' : '#5e6ad2',
+                  justifyContent: 'center'
                 }}>
                   {item.icon}
                 </div>
@@ -349,7 +356,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '11px',
                     fontWeight: 600,
-                    color: isDark ? '#8a8f98' : '#9ca3af',
+                    color: isDark ? '#8a8f98' : '#606266ff',
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
                     marginBottom: '3px',
@@ -360,7 +367,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '14px',
                     fontWeight: 500,
-                    color: item.accent ? '#5ed282' : (isDark ? '#e4e5e9' : '#1f2937'),
+                    color: (getCurrentStatus() === t.activeStatus && item.accent) ? '#5ed282' : (getCurrentStatus() === t.inactiveStatus && item.accent) ? '#e44747ff' : isDark ? '#8a8f98' : '#6b6e72ff',
                     letterSpacing: '-0.01em',
                   }}>
                     {item.value}

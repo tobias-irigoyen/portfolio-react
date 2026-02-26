@@ -9,6 +9,7 @@ import { CTA } from './components/CTA';
 import { Testimonials } from './components/Testimonials';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 function PortfolioLayout() {
   const { isDark } = useApp();
@@ -81,6 +82,8 @@ function PortfolioLayout() {
 
         <Footer />
       </div>
+
+      <ScrollToTop />
 
       <style>{`
         *, *::before, *::after {

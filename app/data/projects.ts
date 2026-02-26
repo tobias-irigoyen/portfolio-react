@@ -40,34 +40,6 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    slug: 'nayra',
-    title: 'Nayra',
-    shortDesc: {
-      en: 'Development of the corporate website for Nayra, a cooperative technology company.',
-      es: 'Desarrollo de sitio institucional de Nayra, una empresa cooperativa de tecnología.',
-    },
-    longDesc: {
-      en: `I worked on the design and development in Vue.js of the corporate website for Nayra, a cooperative technology company.\n\n
-      The site includes a Home, About Us, Projects, and Contact section. It also features a language selector.`,
-      es: `Trabajé en el diseño y desarrollo en Vue.js del sitio institucional de Nayra, una empresa cooperativa de tecnología. \n\n
-      El sitio consta de una sección de Inicio, Sobre nosotros, Trabajos y Contacto. Además cuenta con un selector de idiomas.`
- 
-    },
-    images: [
-      'https://tobiasirigoyen.dev/assets/nayra/logo-min.jpg',
-      'https://tobiasirigoyen.dev/assets/nayra/1-min.png',
-      'https://tobiasirigoyen.dev/assets/nayra/2-min.png',
-      'https://tobiasirigoyen.dev/assets/nayra/3-min.png',
-      'https://tobiasirigoyen.dev/assets/nayra/4-min.png',
-      'https://tobiasirigoyen.dev/assets/nayra/5-min.png'
-    ],
-    tags: ['Vue.js', 'Sass','Figma', 'Design Systems', 'Accessibility'],
-    year: '2019',
-    role: { en: 'Design Systems Lead', es: 'Líder de Design Systems' },
-    link: 'https://nayra.coop',
-  },
-  {
-    id: 3,
     slug: 'pokedex',
     title: 'Pokedex',
     shortDesc: {
@@ -98,6 +70,34 @@ export const projects: Project[] = [
     year: '2025',
     role: { en: 'UI/UX Designer & Vue.js Developer', es: 'Vue.js Developer & Diseñador UI/UX' },
     link: 'https://www.phaurora.com/',
+  },
+  {
+    id: 3,
+    slug: 'nayra',
+    title: 'Nayra',
+    shortDesc: {
+      en: 'Development of the corporate website for Nayra, a cooperative technology company.',
+      es: 'Desarrollo de sitio institucional de Nayra, una empresa cooperativa de tecnología.',
+    },
+    longDesc: {
+      en: `I worked on the design and development in Vue.js of the corporate website for Nayra, a cooperative technology company.\n\n
+      The site includes a Home, About Us, Projects, and Contact section. It also features a language selector.`,
+      es: `Trabajé en el diseño y desarrollo en Vue.js del sitio institucional de Nayra, una empresa cooperativa de tecnología. \n\n
+      El sitio consta de una sección de Inicio, Sobre nosotros, Trabajos y Contacto. Además cuenta con un selector de idiomas.`
+ 
+    },
+    images: [
+      'https://tobiasirigoyen.dev/assets/nayra/logo-min.jpg',
+      'https://tobiasirigoyen.dev/assets/nayra/1-min.png',
+      'https://tobiasirigoyen.dev/assets/nayra/2-min.png',
+      'https://tobiasirigoyen.dev/assets/nayra/3-min.png',
+      'https://tobiasirigoyen.dev/assets/nayra/4-min.png',
+      'https://tobiasirigoyen.dev/assets/nayra/5-min.png'
+    ],
+    tags: ['Vue.js', 'Sass','Figma', 'Design Systems', 'Accessibility'],
+    year: '2019',
+    role: { en: 'Design Systems Lead', es: 'Líder de Design Systems' },
+    link: 'https://nayra.coop',
   },
   {
     id: 4,

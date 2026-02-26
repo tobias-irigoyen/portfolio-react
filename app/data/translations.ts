@@ -16,7 +16,7 @@ export const translations = {
         'I craft digital experiences that blend beautiful design with high-performance code — from concept to production.',
       cta: 'View my work',
       ctaSecondary: "Let's talk",
-      downloadCV: 'Download CV',
+      downloadCV: 'Download resume',
       badge: 'Open to opportunities',
     },
     services: {
@@ -35,7 +35,7 @@ export const translations = {
           icon: 'Palette',
           title: 'UI/UX Design',
           description:
-            'Designing intuitive interfaces that delight users and achieve business goals. From wireframes to polished high-fidelity designs.',
+            `Designing intuitive interfaces that delight users and achieve business goals.\nFrom wireframes to polished high-fidelity designs.`,
         },
         {
           id: 3,
@@ -99,7 +99,7 @@ export const translations = {
     },
     projects: {
       title: 'Selected Work',
-      subtitle: 'A curated selection of projects I\'m proud of.',
+      subtitle: 'A curated selection of success stories',
       viewProject: 'View details',
       visitSite: 'Visit live site',
       close: 'Close',
@@ -113,7 +113,7 @@ export const translations = {
       description:
         "I'm currently available for freelance projects and full-time opportunities. Let's build something extraordinary.",
       button: 'Start a project',
-      buttonSecondary: 'Download CV',
+      buttonSecondary: 'Download resume',
     },
     testimonials: {
       title: 'What people say',
@@ -121,7 +121,7 @@ export const translations = {
     },
     contact: {
       title: 'Get in touch',
-      subtitle: "Have a project in mind or just want to say hi? I'd love to hear from you.",
+      subtitle: "Have a project in mind or an idea you’d like to develop?\n\I'd love to hear from you.",
       name: 'Name',
       email: 'Email',
       message: 'Message',
@@ -137,7 +137,7 @@ export const translations = {
         locationLabel: 'Location',
         locationValue: 'Remote · Worldwide',
         responseLabel: 'Response time',
-        responseValue: 'Within 24 hours',
+        responseValue: '12 hours',
         statusLabel: 'Status',
         statusValue: 'Available for work',
       },
@@ -169,28 +169,28 @@ export const translations = {
     },
     services: {
       title: '¿Qué ofrezco?',
-      subtitle: 'Desarrollo de productos digitales de extremo a extremo, del concepto al lanzamiento.',
+      subtitle: 'Desarrollo de productos digitales de extremo a extremo, del concepto al lanzamiento',
       items: [
         {
           id: 1,
           icon: 'Code2',
           title: 'Desarrollo Frontend',
           description:
-            'Construyendo aplicaciones web performantes y accesibles con frameworks modernos. Código limpio y arquitectura sólida.',
+            'Construyo aplicaciones web performantes y accesibles con frameworks modernos. Código limpio y arquitectura sólida.',
         },
         {
           id: 2,
           icon: 'Palette',
           title: 'Diseño UI/UX',
           description:
-            'Diseñando interfaces intuitivas que deleitan a los usuarios y logran objetivos de negocio. De wireframes a diseños de alta fidelidad.',
+            `Diseño interfaces intuitivas que deleitan a los usuarios y logran objetivos de negocio. \n De wireframes a diseños de alta fidelidad.`
         },
         {
           id: 3,
           icon: 'Layers',
           title: 'Sistemas de Diseño',
           description:
-            'Creando sistemas de diseño escalables y librerías de componentes que garantizan consistencia visual en los productos.',
+            'Creo sistemas de diseño escalables y librerías de componentes que garantizan consistencia visual en los productos.',
         },
         {
           id: 4,
@@ -204,7 +204,7 @@ export const translations = {
           icon: 'Accessibility',
           title: 'Accesibilidad (WCAG)',
           description:
-            'Construyendo productos digitales inclusivos que cumplen los estándares WCAG 2.1 AA para que todos los usuarios puedan acceder.',
+            'Construydo productos digitales inclusivos que cumplen los estándares WCAG 2.1 AA para que todos los usuarios puedan acceder.',
         },
         {
           id: 6,
@@ -217,7 +217,7 @@ export const translations = {
     },
     stack: {
       title: 'Stack Tecnológico',
-      subtitle: 'Herramientas y tecnologías con las que trabajo cada día.',
+      subtitle: 'Herramientas y tecnologías con las que trabajo cada día',
       categories: [
         {
           name: 'Frontend',
@@ -247,7 +247,7 @@ export const translations = {
     },
     projects: {
       title: 'Trabajos',
-      subtitle: 'Una selección curada de casos de éxito.',
+      subtitle: 'Una selección curada de casos de éxito',
       viewProject: 'Ver detalles',
       visitSite: 'Visitar sitio',
       close: 'Cerrar',
@@ -283,9 +283,9 @@ export const translations = {
         emailLabel: 'Email',
         emailValue: 'tobias.irigoyen@gmail.com',
         locationLabel: 'Ubicación',
-        locationValue: 'Remoto · Argentina',
+        locationValue: 'Buenos Aires · Argentina',
         responseLabel: 'Tiempo de respuesta',
-        responseValue: 'En 24 horas',
+        responseValue: '12 horas',
         statusLabel: 'Estado',
         statusValue: 'Disponible',
       },

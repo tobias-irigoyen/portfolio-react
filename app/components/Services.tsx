@@ -72,7 +72,7 @@ export function Services() {
             color: isDark ? '#8a8f98' : '#6b7280',
             maxWidth: '480px',
             lineHeight: 1.6,
-            letterSpacing: '-0.01em',
+            letterSpacing: '-0.01em'
           }}>
             {t.subtitle}
           </p>
@@ -182,6 +182,7 @@ function ServiceCard({ service, isDark, cardBg, cardHoverBg }: {
         color: isDark ? '#8a8f98' : '#6b7280',
         lineHeight: 1.65,
         letterSpacing: '-0.005em',
+        whiteSpace: 'pre-line'
       }}>
         {service.description}
       </p>

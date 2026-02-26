@@ -16,6 +16,7 @@ export const translations = {
         'I craft digital experiences that blend beautiful design with high-performance code — from concept to production.',
       cta: 'View my work',
       ctaSecondary: "Let's talk",
+      downloadCV: 'Download CV',
       badge: 'Open to opportunities',
     },
     services: {
@@ -159,6 +160,7 @@ export const translations = {
         'Creo experiencias digitales que combinan diseño hermoso con código de alto rendimiento — desde el concepto hasta producción.',
       cta: 'Ver mi trabajo',
       ctaSecondary: 'Hablemos',
+      downloadCV: 'Descargar CV',
       badge: 'Abierto a oportunidades',
     },
     services: {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Download } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { translations } from '../data/translations';
 
@@ -232,6 +232,30 @@ export function Hero() {
           >
             {t.cta}
             <ArrowRight size={15} />
+          </motion.button>
+
+          <motion.button
+            onClick={() => scrollTo('#contact')}
+            whileHover={{ scale: 1.02, y: -1 }}
+            whileTap={{ scale: 0.98 }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '13px 24px',
+              borderRadius: '10px',
+              background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+              border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
+              cursor: 'pointer',
+              fontFamily: 'Inter, sans-serif',
+              fontSize: '14px',
+              fontWeight: 600,
+              color: isDark ? '#fff' : '#0a0a0a',
+              letterSpacing: '-0.01em',
+            }}
+          >
+            <Download size={15} />
+            {t.downloadCV}
           </motion.button>
 
           <motion.button

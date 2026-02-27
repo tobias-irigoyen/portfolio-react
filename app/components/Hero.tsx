@@ -318,17 +318,30 @@ export function Hero() {
               paddingTop: '6px',
             }}
           >
-            <div style={{
+            <div id="mouse-wheel" style={{
               width: '3px',
               height: '8px',
               borderRadius: '2px',
               background: isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)',
-            }} />
+            }}
+            />
           </motion.div>
         </motion.div>
       </div>
 
       <style>{`
+        #scroll-indicator {
+          transition: all 300ms ease-in-out;
+      }
+        #scroll-indicator:hover > div {
+          transition: border-color 200ms ease-in-out;
+          border-color: rgb(94, 106, 210) !important;
+        }
+
+        #scroll-indicator:hover #mouse-wheel {
+          transition: background-color 200ms ease-in-out;
+          background-color: rgb(94, 106, 210) !important;
+        }
         @keyframes blink-cursor {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }

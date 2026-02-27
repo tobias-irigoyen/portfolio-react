@@ -271,7 +271,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <motion.button
                     type="submit"
                     disabled={status === 'sending'}
-                    whileHover={{ scale: 1.01 }}
                     whileTap={{ scale: 0.99 }}
                     style={{
                       display: 'flex',
@@ -284,7 +283,6 @@ const handleSubmit = async (e: React.FormEvent) => {
                       background: status === 'sending'
                         ? (isDark ? 'rgba(94,106,210,0.5)' : 'rgba(94,106,210,0.4)')
                         : 'linear-gradient(135deg, #5e6ad2, #7c3aed)',
-                      border: 'none',
                       cursor: status === 'sending' ? 'not-allowed' : 'pointer',
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '14px',
@@ -294,6 +292,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                       boxShadow: '0 4px 20px rgba(94,106,210,0.3)',
                       transition: 'background 0.2s ease',
                     }}
+                    className="border border-transparent hover:border-[#bbb9ff] !transition-all !duration-[300ms]"
                   >
                     {status === 'sending' ? (
                       <>

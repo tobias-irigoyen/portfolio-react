@@ -47,7 +47,7 @@ export function Hero() {
     <section style={{
       minHeight: '100vh',
       display: 'flex',
-      alignItems: 'center',
+      alignItems: 'center md:flex-start',
       justifyContent: 'center',
       position: 'relative',
       overflow: 'hidden',
@@ -215,7 +215,6 @@ export function Hero() {
         >
           <motion.button
             onClick={() => scrollTo('#work')}
-            whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             style={{
               display: 'inline-flex',
@@ -226,16 +225,14 @@ export function Hero() {
               background: isDark
                 ? 'linear-gradient(135deg, #5e6ad2, #7c3aed)'
                 : 'linear-gradient(135deg, #5e6ad2, #7c3aed)',
-              border: 'none',
               cursor: 'pointer',
               fontFamily: 'Inter, sans-serif',
               fontSize: '14px',
               fontWeight: 600,
               color: '#fff',
-              letterSpacing: '-0.01em',
-              boxShadow: '0 4px 20px rgba(94,106,210,0.35)',
-              transition: 'box-shadow 0.2s ease',
+              letterSpacing: '-0.01em'
             }}
+            className="border border-transparent hover:border-[#bbb9ff] transition-all duration-[300ms]"
           >
             {t.cta}
             <ArrowRight size={15} />
@@ -243,7 +240,6 @@ export function Hero() {
 
           <motion.button
             onClick={() => downloadCV()}
-            whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             style={{
               display: 'inline-flex',
@@ -260,6 +256,7 @@ export function Hero() {
               color: isDark ? '#fff' : '#0a0a0a',
               letterSpacing: '-0.01em',
             }}
+            className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
           >
             <Download size={15} />
             {t.downloadCV}
@@ -267,7 +264,6 @@ export function Hero() {
 
           <motion.button
             onClick={() => scrollTo('#contact')}
-            whileHover={{ scale: 1.02, y: -1 }}
             whileTap={{ scale: 0.98 }}
             style={{
               display: 'inline-flex',
@@ -284,6 +280,7 @@ export function Hero() {
               color: isDark ? '#fff' : '#0a0a0a',
               letterSpacing: '-0.01em',
             }}
+            className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
           >
             {t.ctaSecondary}
           </motion.button>
@@ -291,13 +288,16 @@ export function Hero() {
 
         {/* Scroll indicator */}
         <motion.div
+          onClick={() => scrollTo('#services')}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
+          id="scroll-indicator"
           style={{
+            cursor: 'pointer',
             position: 'absolute',
-            bottom: '-80px',
             left: '50%',
+            bottom: '10px',
             transform: 'translateX(-50%)',
             display: 'flex',
             flexDirection: 'column',
@@ -306,13 +306,13 @@ export function Hero() {
           }}
         >
           <motion.div
-            animate={{ y: [0, 6, 0] }}
+            animate={{ y: [0, 15, 0] }}
             transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
             style={{
               width: '22px',
               height: '36px',
               borderRadius: '11px',
-              border: `2px solid ${isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.15)'}`,
+              border: `2px solid ${isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)'}`,
               display: 'flex',
               justifyContent: 'center',
               paddingTop: '6px',
@@ -337,7 +337,15 @@ export function Hero() {
           0%, 100% { box-shadow: 0 0 6px rgba(94,106,210,0.8); }
           50% { box-shadow: 0 0 12px rgba(94,106,210,1); }
         }
-      `}</style>
+          
+      @media (max-width: 768px) {
+        #scroll-indicator {
+          bottom: 50px!important;
+        }
+      }
+      `
+      }
+      </style>
     </section>
   );
 }

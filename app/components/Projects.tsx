@@ -439,10 +439,10 @@ function ProjectModal({
                   background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
                   border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
                   fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 500,
-                  color: isDark ? '#6d6d6dff' : '#6b7280',
+                  color: isDark ? '#e6e6e6ff' : '#6b7280',
                   textDecoration: 'none',
                 }}
-                className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[600ms]"
+                className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
               >
                 {t.visitSite}
                 <ExternalLink size={12} />

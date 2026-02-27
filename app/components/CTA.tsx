@@ -108,7 +108,6 @@ export function CTA() {
             <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <motion.button
                 onClick={() => scrollTo('#contact')}
-                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
                   display: 'inline-flex',
@@ -117,7 +116,6 @@ export function CTA() {
                   padding: '14px 28px',
                   borderRadius: '11px',
                   background: 'linear-gradient(135deg, #5e6ad2, #7c3aed)',
-                  border: 'none',
                   cursor: 'pointer',
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '15px',
@@ -126,6 +124,7 @@ export function CTA() {
                   letterSpacing: '-0.01em',
                   boxShadow: '0 8px 32px rgba(94,106,210,0.4)',
                 }}
+            className="border border-transparent hover:border-[#bbb9ff] transition-colors duration-300"
               >
                 {t.button}
                 <ArrowRight size={16} />
@@ -133,7 +132,6 @@ export function CTA() {
 
               <motion.button
                 onClick={() => downloadCV()}
-                whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
                   display: 'inline-flex',
@@ -150,6 +148,7 @@ export function CTA() {
                   color: isDark ? '#fff' : '#0a0a0a',
                   letterSpacing: '-0.01em',
                 }}
+                className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
               >
                 <Download size={15} />
                 {t.buttonSecondary}

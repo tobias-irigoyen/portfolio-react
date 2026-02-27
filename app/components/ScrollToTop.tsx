@@ -52,11 +52,11 @@ export function ScrollToTop() {
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.8, y: 20 }}
-      whileHover={{ scale: 1.02, y: -1 }}
+      whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       style={{
         position: 'fixed',
-        bottom: '24px',
+        bottom: isMobile ? '90px' : '24px',
         right: '24px',
         display: 'inline-flex',
         alignItems: 'center',
@@ -75,7 +75,7 @@ export function ScrollToTop() {
         color: '#fff',
         letterSpacing: '-0.01em',
         boxShadow: '0 4px 20px rgba(94,106,210,0.35)',
-        transition: 'box-shadow 0.2s ease',
+        transition: 'all 0.2s ease',
         zIndex: 1000,
         minWidth: isMobile ? 'auto' : 'auto',
       }}

@@ -30,42 +30,42 @@ export const translations = {
           icon: 'Code2',
           title: 'Frontend Development',
           description:
-            'Building performant, accessible web applications with modern frameworks. Clean code, great architecture, seamless UX.',
+            'Develop performant, accessible web applications with modern frameworks. Clean code, great architecture, seamless UX.',
         },
         {
           id: 2,
           icon: 'Palette',
           title: 'UI/UX Design',
           description:
-            `Designing intuitive interfaces that delight users and achieve business goals.\nFrom wireframes to polished high-fidelity designs.`,
+            `Design intuitive interfaces that delight users and achieve business goals.\nFrom wireframes to polished high-fidelity designs.`,
         },
         {
           id: 3,
           icon: 'Layers',
           title: 'Design Systems',
           description:
-            'Creating scalable design systems and component libraries that ensure visual consistency across products.',
+            'Create scalable design systems and component libraries that ensure visual consistency across products.',
         },
         {
           id: 4,
           icon: 'MonitorPlay',
           title: 'Prototyping',
           description:
-            'Rapid prototyping and interactive demos to validate ideas and gather feedback before full development.',
+            'Make rapid prototyping and interactive demos to validate ideas and gather feedback before full development.',
         },
         {
           id: 5,
           icon: 'Accessibility',
           title: 'Accessibility (WCAG)',
           description:
-            'Building inclusive digital products that meet WCAG 2.1 AA standards so every user can access your content.',
+            'Build inclusive digital products that meet WCAG 2.1 AA standards so every user can access your content.',
         },
         {
           id: 6,
           icon: 'BarChart2',
           title: 'A/B Testing & UX Research',
           description:
-            'Data-driven design decisions through user research, usability testing, and continuous experimentation.',
+            'Take design decisions based on data through user research, usability testing, and continuous experimentation.',
         },
       ],
     },
@@ -183,7 +183,7 @@ export const translations = {
           icon: 'Code2',
           title: 'Desarrollo Frontend',
           description:
-            'Construyo aplicaciones web performantes y accesibles con frameworks modernos. Código limpio y arquitectura sólida.',
+            'Desarrollo aplicaciones web performantes y accesibles con frameworks modernos. Código limpio y arquitectura sólida.',
         },
         {
           id: 2,
@@ -204,21 +204,21 @@ export const translations = {
           icon: 'MonitorPlay',
           title: 'Prototipado',
           description:
-            'Prototipado rápido y demos interactivos para validar ideas y recoger feedback antes del desarrollo completo.',
+            'Realizo prototipado rápido y demos interactivos para validar ideas y recoger feedback antes del desarrollo completo.',
         },
         {
           id: 5,
           icon: 'Accessibility',
           title: 'Accesibilidad (WCAG)',
           description:
-            'Construydo productos digitales inclusivos que cumplen los estándares WCAG 2.1 AA para que todos los usuarios puedan acceder.',
+            'Construyo productos digitales inclusivos que cumplen los estándares WCAG 2.1 AA para que todos los usuarios puedan acceder.',
         },
         {
           id: 6,
           icon: 'BarChart2',
           title: 'A/B Testing e Investigación UX',
           description:
-            'Decisiones de diseño basadas en datos mediante investigación de usuarios, pruebas de usabilidad y experimentación continua.',
+            'Tomo decisiones de diseño basadas en datos mediante investigación de usuarios, pruebas de usabilidad y experimentación continua.',
         },
       ],
     },

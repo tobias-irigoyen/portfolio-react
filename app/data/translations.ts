@@ -149,7 +149,7 @@ export const translations = {
     },
     footer: {
       rights: 'All rights reserved.',
-      builtWith: 'Built with React & TailwindCSS',
+      builtWith: 'Built with 💜 from 🇦🇷',
     },
   },
   es: {
@@ -302,7 +302,7 @@ export const translations = {
     },
     footer: {
       rights: 'Todos los derechos reservados.',
-      builtWith: 'Construido con React & TailwindCSS',
+      builtWith: 'Construido con 💜 desde 🇦🇷',
     },
   },
 };

@@ -38,8 +38,8 @@ export function Hero() {
 
   const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Tobías Irigoyen - CV.pdf';
-    link.download = 'Tobías Irigoyen - CV.pdf';
+    link.href = language === 'es' ? '/Tobías Irigoyen - CV.pdf' : '/Tobías Irigoyen - Resume.pdf';
+    link.download = language === 'es' ? 'Tobías Irigoyen - CV.pdf' : 'Tobías Irigoyen - Resume.pdf';
     link.click();
   };
 

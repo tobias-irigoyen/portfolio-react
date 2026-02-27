@@ -2,15 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { MoveUp } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { translations } from '../data/translations';
 
 export function ScrollToTop() {
-  const { isDark } = useApp();
+  const { isDark, language, setLanguage } = useApp();
+  const t = translations[language].nav;
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show button after scrolling past hero section (100vh)
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
       
@@ -27,8 +28,8 @@ export function ScrollToTop() {
 
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('resize', checkMobile);
-    handleScroll(); // Check initial position
-    checkMobile(); // Check initial mobile state
+    handleScroll();
+    checkMobile(); 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -48,7 +49,6 @@ export function ScrollToTop() {
   return (
     <motion.button
       onClick={scrollToTop}
-      title="Ir arriba"
       initial={{ opacity: 0, scale: 0.8, y: 20 }}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -81,7 +81,7 @@ export function ScrollToTop() {
       }}
     >
       <MoveUp size={15} />
-      {!isMobile && 'Ir arriba'}
+      {!isMobile && t.goToTopTitle}
     </motion.button>
   );
 }

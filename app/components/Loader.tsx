@@ -12,8 +12,8 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 300); // Allow fade out animation
-    }, 2000); // Show loader for 2 seconds
+      setTimeout(onComplete, 300);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [onComplete]);

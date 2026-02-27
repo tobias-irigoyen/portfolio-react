@@ -199,6 +199,7 @@ export const testimonials = [
   {
     id: 1,
     name: 'Christian Pranteda',
+    alt: 'Christian Pranteda - Ethofy Team Leader',
     role: { en: 'Team Leader at Ethofy', es: 'Team Leader en Ethofy' },
     avatar: '/testimonials/christian-pranteda.jpg',
     quote: {
@@ -209,6 +210,7 @@ export const testimonials = [
   {
     id: 2,
     name: 'Cristian Martinez',
+    alt: 'Cristian Martinez - Ethofy Tech leader',
     role: { en: 'Tech leader at Ethofy', es: 'Tech Lider en Ethofy' },
     avatar: '/testimonials/cristian-martinez.jpg',
     quote: {
@@ -219,6 +221,7 @@ export const testimonials = [
   {
     id: 3,
     name: 'Gabriela Di Grazia',
+    alt: 'Gabriela Di Grazia - Ethofy Sr. Frontend Developer',
     role: { en: 'Sr. Frontend Developer at Ethofy', es: 'Frontend Developer Sr. en Ethofy' },
     avatar: '/testimonials/gabriela-di-grazia.jpg',
     quote: {

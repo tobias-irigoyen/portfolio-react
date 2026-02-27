@@ -7,6 +7,7 @@ export const translations = {
       testimonials: 'Testimonials',
       contact: 'Contact',
       available: 'Available for work',
+      goToTopTitle: 'Scroll to top'
     },
     hero: {
       greeting: "Hello, I'm",
@@ -159,6 +160,7 @@ export const translations = {
       testimonials: 'Reseñas',
       contact: 'Contacto',
       available: 'Disponible para trabajar',
+      goToTopTitle: 'Ir arriba'
     },
     hero: {
       greeting: 'Hola, soy',

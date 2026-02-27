@@ -151,7 +151,7 @@ function TestimonialCard({ testimonial, index, isDark, language }: {
       <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
         <img
           src={testimonial.avatar}
-          alt={testimonial.name}
+          alt={testimonial.alt}
           style={{
             width: '40px',
             height: '40px',

@@ -229,8 +229,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                 }}>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-row">
                     <div>
-                      <label style={labelStyle}>{t.name}</label>
+                      <label htmlFor="name-input" style={labelStyle}>{t.name}</label>
                       <input
+                        id="name-input"
                         type="text"
                         placeholder={t.namePlaceholder}
                         value={form.name}
@@ -241,8 +242,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                       />
                     </div>
                     <div>
-                      <label style={labelStyle}>{t.email}</label>
+                      <label htmlFor="email-input" style={labelStyle}>{t.email}</label>
                       <input
+                        id="email-input"
                         type="email"
                         placeholder={t.emailPlaceholder}
                         value={form.email}
@@ -254,8 +256,9 @@ const handleSubmit = async (e: React.FormEvent) => {
                     </div>
                   </div>
                   <div>
-                    <label style={labelStyle}>{t.message}</label>
+                    <label htmlFor="textarea-input" style={labelStyle}>{t.message}</label>
                     <textarea
+                      id="textarea-input"
                       placeholder={t.messagePlaceholder}
                       rows={6}
                       value={form.message}

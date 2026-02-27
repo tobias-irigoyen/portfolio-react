@@ -154,12 +154,12 @@ export function Navbar() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '14px',
                       fontWeight: isActive ? '600' : '450',
-                      color: isActive ? '#fff' : (isDark ? '#8a8f98' : '#6b7280'),
+                      color: isActive ? (isDark ? '#fff' : '#000') : (isDark ? '#8a8f98' : '#6b7280'),
                       transition: 'color 0.2s ease',
                       letterSpacing: '-0.01em',
                     }}
-                    onMouseEnter={e => (e.currentTarget.style.color = '#fff', e.currentTarget.style.textDecoration = 'underline')}
-                    onMouseLeave={e => (e.currentTarget.style.color = isActive ? '#fff' : (isDark ? '#8a8f98' : '#6b7280'), e.currentTarget.style.textDecoration = 'none')}
+                    onMouseEnter={e => (e.currentTarget.style.color = isDark ? '#fff' : '#000', e.currentTarget.style.textDecoration = 'underline')}
+                    onMouseLeave={e => (e.currentTarget.style.color = isActive ? (isDark ? '#fff' : '#000') : (isDark ? '#8a8f98' : '#6b7280'), e.currentTarget.style.textDecoration = 'none')}
                   >
                     {link.label}
                   </motion.button>
@@ -339,7 +339,7 @@ export function Navbar() {
                       fontFamily: 'Inter, sans-serif',
                       fontSize: '16px',
                       fontWeight: 500,
-                      color: isActive ? '#fff' : (isDark ? '#fff' : '#0a0a0a'),
+                      color: isActive ? (isDark ? '#fff' : '#000') : (isDark ? '#fff' : '#0a0a0a'),
                     }}
                   >
                     {link.label}

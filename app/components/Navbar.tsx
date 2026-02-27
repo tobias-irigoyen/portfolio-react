@@ -17,6 +17,20 @@ export function Navbar() {
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+  
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      const langSelector = document.querySelector('[data-lang-selector]');
+      
+      if (langOpen && langSelector && !langSelector.contains(target)) {
+        setLangOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [langOpen]);
 
   // Intersection Observer for active section tracking
   useEffect(() => {
@@ -170,12 +184,11 @@ export function Navbar() {
             {/* Right controls */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               {/* Language Selector */}
-              <div style={{ position: 'relative' }}>
+              <div style={{ position: 'relative' }} data-lang-selector>
                 <motion.button
                   title={language === 'en' ? 'Select site language' : 'Elegí el idioma del sitio'}
                   onClick={() => setLangOpen(p => !p)}
                   whileHover={{ opacity: 0.8 }}
-                  whileTap={{ scale: 0.95 }}
                   style={{
                     display: 'flex',
                     alignItems: 'center',

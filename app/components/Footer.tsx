@@ -56,7 +56,7 @@ export function Footer() {
         <span style={{
           fontFamily: 'Inter, sans-serif',
           fontSize: '12px',
-          color: isDark ? 'rgba(138,143,152,1)' : 'rgb(255, 255,255)',
+          color: isDark ? 'rgba(138,143,152,1)' : '#6b7280',
           letterSpacing: '-0.01em',
         }}>
           {t.builtWith}

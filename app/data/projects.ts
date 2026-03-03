@@ -40,6 +40,33 @@ export const projects: Project[] = [
   },
   {
     id: 2,
+    slug: 'wandervista',
+    title: 'Wandervista',
+    shortDesc: {
+      en: 'The Wandervista project consists of a tourism website for Wandervista, a company specializing in travel and tourism.',
+      es: 'El proyecto Wandervista consiste en un sitio web de turismo para Wandervista, una compañía especializada en viajes y turismo.',
+    },
+    longDesc: {
+      en: `I worked on the design and development in React of the corporate website for Wandervista, a company specializing in travel and tourism.`,
+      es: `Trabajé en el diseño y desarrollo en React del sitio institucional de Wandervista, una compañía especializada en viajes y turismo.`,
+    },
+    images: [
+      '/wandervista/logo.jpg',
+      '/wandervista/1.png',
+      '/wandervista/2.png',
+      '/wandervista/3.png',
+      '/wandervista/4.png',
+      '/wandervista/5.png',
+      '/wandervista/6.png',
+      '/wandervista/7.png',
+    ],
+    tags: ['React','HTML5','CSS3','TailwindCSS','TypeScript','i18n','Figma Make','OpenCode','Vite'],
+    year: '2026',
+    role: { en: 'React Developer', es: 'React Developer' },
+    link: 'https://wandervista-tourism.vercel.app/',
+  },
+  {
+    id: 3,
     slug: 'pokedex',
     title: 'Pokedex',
     shortDesc: {
@@ -72,7 +99,7 @@ export const projects: Project[] = [
     link: 'https://www.phaurora.com/',
   },
   {
-    id: 3,
+    id: 4,
     slug: 'nayra',
     title: 'Nayra',
     shortDesc: {
@@ -100,7 +127,7 @@ export const projects: Project[] = [
     link: 'https://nayra.coop',
   },
   {
-    id: 4,
+    id: 5,
     slug: 'fit',
     title: 'FIT - Flujo Intercooperativo de Trabajo',
     shortDesc: {
@@ -130,7 +157,7 @@ The site features a responsive design and layout, presenting the description and
     link: 'https://facttic.org.ar/fit/',
   },
   {
-    id: 5,
+    id: 6,
     slug: 'api-covid-19',
     title: 'API Covid 19',
     shortDesc: {
@@ -161,7 +188,7 @@ The site features a responsive design and layout, presenting the description and
     link: 'https://tobias-irigoyen.github.io/landing-api-covid/',
   },
   {
-    id: 6,
+    id: 7,
     slug: 'proyecto-aurora',
     title: 'Proyecto Aurora',
     shortDesc: {

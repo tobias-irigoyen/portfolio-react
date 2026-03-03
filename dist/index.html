@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobías Irigoyen – Frontend Developer</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+    }
+
+    #initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0.3; }
+    }
+
+    .blink {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: blink 3s infinite;
+    }
+
+    .motion-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: none;
+      border: none;
+      cursor: default;
+      padding: 0;
+      transition: opacity 0.2s ease;
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+
+    .motion-btn:hover {
+      opacity: 0.8; /* simula whileHover */
+    }
+
+    .logo-box {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #5e6ad2, #8b5cf6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-box span {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .name {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: -0.01em;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-D5qFwlmn.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D9CQNH8S.css">
+</head>
+
+<body>
+
+  <div id="initial-loader">
+    <div class="blink">
+      <button 
+        class="motion-btn"
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      >
+        <div class="logo-box">
+          <span>T</span>
+        </div>
+        <span class="name">Tobías Irigoyen</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="root"></div>
+
+</body>
+</html>

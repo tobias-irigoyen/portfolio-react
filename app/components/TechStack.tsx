@@ -61,7 +61,6 @@ export function TechStack() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: catIndex * 0.08 }}
               style={{ display: 'flex', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
             >
               {/* Category label */}
@@ -133,7 +132,6 @@ function TechBadge({ label, isDark, delay }: { label: string; isDark: boolean; d
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.3, delay }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -151,7 +149,6 @@ function TechBadge({ label, isDark, delay }: { label: string; isDark: boolean; d
         color: hovered ? '#5e6ad2' : (isDark ? '#c4c6cc' : '#374151'),
         letterSpacing: '-0.01em',
         cursor: 'default',
-        transition: 'all 0.2s ease',
         userSelect: 'none',
       }}
     >

@@ -97,7 +97,6 @@ export function Navbar() {
       <motion.nav
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         style={{
           position: 'fixed',
           top: 0,
@@ -107,8 +106,7 @@ export function Navbar() {
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
           background: bg,
-          borderBottom: `1px solid ${scrolled ? borderColor : 'transparent'}`,
-          transition: 'all 0.3s ease',
+          borderBottom: `1px solid ${scrolled ? borderColor : 'transparent'}`
         }}
       >
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
@@ -169,7 +167,6 @@ export function Navbar() {
                       fontSize: '14px',
                       fontWeight: isActive ? '600' : '450',
                       color: isActive ? (isDark ? '#fff' : '#000') : (isDark ? '#8a8f98' : '#6b7280'),
-                      transition: 'color 0.2s ease',
                       letterSpacing: '-0.01em',
                     }}
                     onMouseEnter={e => (e.currentTarget.style.color = isDark ? '#fff' : '#000', e.currentTarget.style.textDecoration = 'underline')}
@@ -337,7 +334,6 @@ export function Navbar() {
                     key={link.href}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
                     onClick={() => scrollTo(link.href)}
                     style={{
                       paddingBottom: '4px',

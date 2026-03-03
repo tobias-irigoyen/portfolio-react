@@ -17,7 +17,6 @@ export function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
           style={{ textAlign: 'center', marginBottom: '64px' }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px' }}>
@@ -89,7 +88,6 @@ function TestimonialCard({ testimonial, index, isDark, language }: {
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
@@ -99,7 +97,6 @@ function TestimonialCard({ testimonial, index, isDark, language }: {
         border: `1px solid ${hovered
           ? 'rgba(94,106,210,0.3)'
           : (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)')}`,
-        transition: 'all 0.2s ease',
         transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
         boxShadow: hovered ? (isDark ? '0 16px 48px rgba(0,0,0,0.3)' : '0 16px 48px rgba(0,0,0,0.08)') : 'none',
         position: 'relative',

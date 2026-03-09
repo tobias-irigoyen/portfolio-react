@@ -26,7 +26,7 @@ export function Navbar() {
       if (langOpen && langSelector && !langSelector.contains(target)) {
         setLangOpen(false);
       }
-    };
+    };  
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -34,7 +34,7 @@ export function Navbar() {
 
   // Intersection Observer for active section tracking
   useEffect(() => {
-    const sections = ['work', 'services', 'stack', 'testimonials', 'contact'];
+    const sections = ['services', 'stack', 'work', 'testimonials', 'contact'];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {

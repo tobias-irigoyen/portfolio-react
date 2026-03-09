@@ -14,29 +14,29 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 1,
-    slug: 'fiqus',
-    title: 'Fiqus',
+    slug: 'touchi-strategies',
+    title: 'Touchi Strategies',
     shortDesc: {
-      en: 'Development of the corporate website for Fiqus, a cooperative company specializing in data science, artificial intelligence, blockchain, and fintech.',
-      es: 'Desarrollo de sitio institucional de Fiqus, una empresa cooperativa de ciencia de datos, inteligencia artificial, blockchain y fintech.',
+      en: '',
+      es: '', 
     },
     longDesc: {
-      en: `I developed the complete corporate website for the technology cooperative Fiqus, which includes multiple sections, a blog, and a multilingual translation system.\n\n
-      The site was built with React and TypeScript, using TailwindCSS for CSS styling, Lottie for SVG animations, and implementing the multilingual translation system with i18n.`,
-      es: `Desarrollé el sitio institucional completo de la cooperativa de tecnología Fiqus, la cual consta de múltiples secciones, un blog y un sistema de traducción multiidioma.\n\n
-      El sitio fue desarrollado con React y TypeScript, utilizando TailwindCSS para los estilos CSS, Lottie para las animaciones SVG y el sistema de traducción multiidioma con i18n.`,
+      en: ``,
+      es: ``,
     },
     images: [
-      '/fiqus/1.jpg',
-      '/fiqus/2.jpg',
-      '/fiqus/3.jpg',
-      '/fiqus/4.jpg',
-      '/fiqus/5.jpg'
+      '/touchi-strategies/logo.png',
+      '/touchi-strategies/1.png',
+      '/touchi-strategies/2.png',
+      '/touchi-strategies/3.png',
+      '/touchi-strategies/4.png',
+      '/touchi-strategies/5.png',
+      '/touchi-strategies/6.png'
     ],
-    tags: ['React', 'Lottie.js', 'HTML5', 'CSS3', 'I18n'],
-    year: '2022',
+    tags: ['React','HTML5','CSS3','TailwindCSS','TypeScript','i18n','Figma Make','OpenCode','Vite'],
+    year: '2026',
     role: { en: 'React Developer', es: 'React Developer' },
-    link: 'https://fiqus.coop/',
+    link: 'https://touchistrategies.com/',
   },
   {
     id: 2,
@@ -64,9 +64,35 @@ export const projects: Project[] = [
     year: '2026',
     role: { en: 'React Developer', es: 'React Developer' },
     link: 'https://wandervista-tourism.vercel.app/',
+  },{
+    id: 3,
+    slug: 'fluxia-ai',
+    title: 'Fluxia AI',
+    shortDesc: {
+      en: '',
+      es: '',
+    },
+    longDesc: {
+      en: ``,
+      es: ``,
+    },
+    images: [
+      '/fluxia-ai/logo.png',
+      '/fluxia-ai/1.png',
+      '/fluxia-ai/2.png',
+      '/fluxia-ai/3.png',
+      '/fluxia-ai/4.png',
+      '/fluxia-ai/5.png',
+      '/fluxia-ai/6.png',
+      '/fluxia-ai/7.png'
+    ],
+    tags: ['Angular', 'HTML5', 'CSS3', 'TypeScript', 'Figma Make','Open Code', ],
+    year: '2026',
+    role: { en: 'Angular Developer', es: 'Angular Developer' },
+    link: 'https://fluxia-ai.vercel.app/',
   },
   {
-    id: 3,
+    id: 4,
     slug: 'pokedex',
     title: 'Pokedex',
     shortDesc: {
@@ -99,7 +125,33 @@ export const projects: Project[] = [
     link: 'https://www.phaurora.com/',
   },
   {
-    id: 4,
+    id: 5,
+    slug: 'fiqus',
+    title: 'Fiqus',
+    shortDesc: {
+      en: 'Development of the corporate website for Fiqus, a cooperative company specializing in data science, artificial intelligence, blockchain, and fintech.',
+      es: 'Desarrollo de sitio institucional de Fiqus, una empresa cooperativa de ciencia de datos, inteligencia artificial, blockchain y fintech.',
+    },
+    longDesc: {
+      en: `I developed the complete corporate website for the technology cooperative Fiqus, which includes multiple sections, a blog, and a multilingual translation system.\n\n
+      The site was built with React and TypeScript, using TailwindCSS for CSS styling, Lottie for SVG animations, and implementing the multilingual translation system with i18n.`,
+      es: `Desarrollé el sitio institucional completo de la cooperativa de tecnología Fiqus, la cual consta de múltiples secciones, un blog y un sistema de traducción multiidioma.\n\n
+      El sitio fue desarrollado con React y TypeScript, utilizando TailwindCSS para los estilos CSS, Lottie para las animaciones SVG y el sistema de traducción multiidioma con i18n.`,
+    },
+    images: [
+      '/fiqus/1.jpg',
+      '/fiqus/2.jpg',
+      '/fiqus/3.jpg',
+      '/fiqus/4.jpg',
+      '/fiqus/5.jpg'
+    ],
+    tags: ['React', 'Lottie.js', 'HTML5', 'CSS3', 'I18n'],
+    year: '2022',
+    role: { en: 'React Developer', es: 'React Developer' },
+    link: 'https://fiqus.coop/',
+  },
+  {
+    id: 6,
     slug: 'nayra',
     title: 'Nayra',
     shortDesc: {
@@ -127,7 +179,7 @@ export const projects: Project[] = [
     link: 'https://nayra.coop',
   },
   {
-    id: 5,
+    id: 7,
     slug: 'fit',
     title: 'FIT - Flujo Intercooperativo de Trabajo',
     shortDesc: {
@@ -157,7 +209,7 @@ The site features a responsive design and layout, presenting the description and
     link: 'https://facttic.org.ar/fit/',
   },
   {
-    id: 6,
+    id: 8,
     slug: 'api-covid-19',
     title: 'API Covid 19',
     shortDesc: {
@@ -188,7 +240,7 @@ The site features a responsive design and layout, presenting the description and
     link: 'https://tobias-irigoyen.github.io/landing-api-covid/',
   },
   {
-    id: 7,
+    id: 9,
     slug: 'proyecto-aurora',
     title: 'Proyecto Aurora',
     shortDesc: {

@@ -41,32 +41,65 @@ export function Navbar() {
       contact: 'contact',
     },
     es: {
-      services: 'servicios',
+      servicios: 'services',
       stack: 'stack',
-      work: 'trabajos',
-      testimonials: 'resenas',
-      contact: 'contacto',
+      trabajos: 'work',
+      resenas: 'testimonials',
+      contacto: 'contact',
     },
   };
+
+  const slugToIdMap: Record<string, string> = {
+    services: 'services',
+    servicios: 'services',
+    stack: 'stack',
+    work: 'work',
+    trabajos: 'work',
+    testimonials: 'testimonials',
+    resenas: 'testimonials',
+    contact: 'contact',
+    contacto: 'contact',
+  };
+
+  // Scroll to section on page load if slug exists
+  useEffect(() => {
+    const path = window.location.pathname.replace('/', '');
+    if (path && slugToIdMap[path]) {
+      const sectionId = slugToIdMap[path];
+      const element = document.getElementById(sectionId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'auto' });
+        }, 100);
+      }
+    }
+  }, []);
 
   // Intersection Observer for active section tracking
   useEffect(() => {
     const sections = ['services', 'stack', 'work', 'testimonials', 'contact'];
+    
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            if (window.scrollY > 100) {
-              setActiveSection(entry.target.id);
-              const slug = sectionIdMap[language][entry.target.id] || entry.target.id;
-              window.history.replaceState(null, '', `/${slug}`);
-            }
-          }
-        });
+        // Get all intersecting entries
+        const intersectingEntries = entries.filter(entry => 
+          entry.isIntersecting && entry.intersectionRatio >= 0.1
+        );
+        
+        if (intersectingEntries.length > 0 && window.scrollY > 100) {
+          // Find the entry with the highest intersection ratio
+          const mostVisibleEntry = intersectingEntries.reduce((prev, current) => 
+            prev.intersectionRatio > current.intersectionRatio ? prev : current
+          );
+          
+          setActiveSection(mostVisibleEntry.target.id);
+          const slug = sectionIdMap[language][mostVisibleEntry.target.id] || mostVisibleEntry.target.id;
+          window.history.replaceState(null, '', `/${slug}`);
+        }
       },
       {
-        threshold: 0.5,
-        rootMargin: '-80px 0px -80px 0px'
+        threshold: [0.1, 0.3, 0.5],
+        rootMargin: '-100px 0px -50% 0px'
       }
     );
 
@@ -82,7 +115,7 @@ export function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => {
       observer.disconnect();

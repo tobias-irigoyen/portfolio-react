@@ -17,7 +17,7 @@ export const translations = {
       description:
         'I craft digital experiences that blend beautiful design with high-performance code — from concept to production.',
       cta: 'View my work',
-      ctaSecondary: "Let's talk",
+      ctaSecondary: "Contact me",
       downloadCV: 'Download resume',
       badge: 'Open to opportunities',
     },
@@ -96,6 +96,10 @@ export const translations = {
         {
           name: 'Process',
           items: ['UX Research', 'A/B Testing', 'Accessibility (WCAG)', 'Agile / Scrum'],
+        },
+        {
+          name: 'Deployment',
+          items: ['Vercel', 'Netlify']
         },
       ],
     },
@@ -228,11 +232,11 @@ export const translations = {
       categories: [
         {
           name: 'Frontend',
-          items: ['React', 'Vue.js', 'Next.js', 'JavaScript (ES6+)' ,'HTML5', 'CSS3', 'TypeScript'],
+          items: ['React', 'Vue.js', 'Next.js', 'JavaScript (ES6+)','TypeScript' ,'HTML5' ],
         },
         {
           name: 'Estilos',
-          items: ['TailwindCSS', 'Bootstrap', 'Sass', 'CSS Modules'],
+          items: ['Tailwind CSS', 'Bootstrap', 'Sass', 'CSS Modules','CSS3'],
         },
         {
           name: 'IA Tools',
@@ -249,6 +253,10 @@ export const translations = {
         {
           name: 'Proceso',
           items: ['Investigación UX', 'A/B Testing', 'Accesibilidad (WCAG)', 'Agile / Scrum'],
+        },
+        {
+          name: 'Despliegue',
+          items: ['Vercel', 'Netlify']
         },
       ],
     },

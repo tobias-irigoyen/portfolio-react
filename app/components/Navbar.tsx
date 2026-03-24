@@ -32,6 +32,23 @@ export function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [langOpen]);
 
+  const sectionIdMap: Record<Language, Record<string, string>> = {
+    en: {
+      services: 'services',
+      stack: 'stack',
+      work: 'work',
+      testimonials: 'testimonials',
+      contact: 'contact',
+    },
+    es: {
+      services: 'servicios',
+      stack: 'stack',
+      work: 'trabajos',
+      testimonials: 'resenas',
+      contact: 'contacto',
+    },
+  };
+
   // Intersection Observer for active section tracking
   useEffect(() => {
     const sections = ['services', 'stack', 'work', 'testimonials', 'contact'];
@@ -39,16 +56,17 @@ export function Navbar() {
       (entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            // Only set active section if we're not at the top of the page
             if (window.scrollY > 100) {
               setActiveSection(entry.target.id);
+              const slug = sectionIdMap[language][entry.target.id] || entry.target.id;
+              window.history.replaceState(null, '', `/${slug}`);
             }
           }
         });
       },
       {
-        threshold: 0.5, // Section is considered active when 50% is visible
-        rootMargin: '-80px 0px -80px 0px' // Account for navbar height
+        threshold: 0.5,
+        rootMargin: '-80px 0px -80px 0px'
       }
     );
 
@@ -57,10 +75,10 @@ export function Navbar() {
       if (element) observer.observe(element);
     });
 
-    // Also check scroll position to reset active section when at top
     const handleScroll = () => {
       if (window.scrollY <= 100) {
         setActiveSection('');
+        window.history.replaceState(null, '', '/');
       }
     };
 
@@ -70,19 +88,22 @@ export function Navbar() {
       observer.disconnect();
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [language]);
 
   const navLinks = [
-    { label: t.services, href: '#services' },
-    { label: t.stack, href: '#stack' },
-    { label: t.work, href: '#work' },
-    { label: t.testimonials, href: '#testimonials' },
-    { label: t.contact, href: '#contact' },
+    { label: t.services, href: '#services', id: 'services' },
+    { label: t.stack, href: '#stack', id: 'stack' },
+    { label: t.work, href: '#work', id: 'work' },
+    { label: t.testimonials, href: '#testimonials', id: 'testimonials' },
+    { label: t.contact, href: '#contact', id: 'contact' },
   ];
 
-  const scrollTo = (href: string) => {
+  const scrollTo = (href: string, sectionId: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setActiveSection(sectionId);
+    const slug = sectionIdMap[language][sectionId] || sectionId;
+    window.history.replaceState(null, '', `/${slug}`);
     setMobileOpen(false);
   };
 
@@ -150,12 +171,12 @@ export function Navbar() {
             {/* Desktop Nav */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }} className="hidden-mobile">
               {navLinks.map(link => {
-                const sectionId = link.href.replace('#', '');
+                const sectionId = link.id;
                 const isActive = activeSection === sectionId;
                 return (
                   <motion.button
                     key={link.href}
-                    onClick={() => scrollTo(link.href)}
+                    onClick={() => scrollTo(link.href, link.id)}
                     whileHover={{ opacity: 1 }}
                     style={{
                       background: 'none',
@@ -326,15 +347,13 @@ export function Navbar() {
               padding: '16px 24px 24px',
             }}
           >
-            {navLinks.map((link, i) => {
-                const sectionId = link.href.replace('#', '');
+            {navLinks.map((link) => {
+                const sectionId = link.id;
                 const isActive = activeSection === sectionId;
                 return (
-                  <motion.button
+                  <button
                     key={link.href}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    onClick={() => scrollTo(link.href)}
+                    onClick={() => scrollTo(link.href, link.id)}
                     style={{
                       paddingBottom: '4px',
                       display: 'block',
@@ -350,9 +369,9 @@ export function Navbar() {
                       fontWeight: 500,
                       color: isActive ? (isDark ? '#fff' : '#000') : (isDark ? '#fff' : '#0a0a0a'),
                     }}
-                  >
+                    >
                     {link.label}
-                  </motion.button>
+                  </button>
                 );
               })}
           </motion.div>

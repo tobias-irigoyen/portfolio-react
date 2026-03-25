@@ -1,27 +1,118 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobías Irigoyen – Frontend Developer</title>
 
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Tobías Irigoyen – Frontend Engineer & UI/UX Designer</title>
+  <meta name="title" content="Tobías Irigoyen – Frontend Engineer & UI/UX Designer" />
+  <meta name="description" content="Frontend Engineer & UI/UX Designer specialized in scalable UI systems, high-performance applications, and modern web experiences." />
+  <meta name="keywords" content="Frontend Engineer, React Developer, Vue.js Developer, Angular Developer, UI UX Designer, Web Performance" />
+  <meta name="author" content="Tobías Irigoyen" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://tobiasirigoyen.dev/" />
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tobiasirigoyen.dev/" />
+  <meta property="og:title" content="Tobías Irigoyen – Frontend Developer & UI/UX Designer" />
+  <meta property="og:description" content="Building high-performance web applications with modern technologies." />
+  <meta property="og:image" content="https://tobiasirigoyen.dev/og-image.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://tobiasirigoyen.dev/" />
+  <meta name="twitter:title" content="Tobías Irigoyen – Frontend Engineer & UI/UX Designer" />
+  <meta name="twitter:description" content="Frontend Engineer portfolio." />
+  <meta name="twitter:image" content="https://tobiasirigoyen.dev/og-image.png" />
+
+  <!-- Performance: Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/hero.avif" as="image">
+  <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/favicon-BZRlC-Ez.ico" />
+
+  <!-- Manifest -->
+  <link rel="manifest" href="/assets/site-BwHFeIBa.webmanifest" />
+
+  <!-- Mobile App -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Tobías Irigoyen",
+        "url": "https://tobiasirigoyen.dev",
+        "image": "https://tobiasirigoyen.dev/profile.jpg",
+        "jobTitle": "Frontend Engineer & UI/UX Designer",
+        "sameAs": [
+          "https://github.com/tobias-irigoyen",
+          "https://linkedin.com/in/tobiasirigoyen"
+        ],
+        "knowsAbout": ["React", "Vue.js", "Angular", "UI/UX", "Web Performance"]
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://tobiasirigoyen.dev",
+        "name": "Tobías Irigoyen Portfolio"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Fluxia AI",
+        "description": "AI-powered business automation platform.",
+        "url": "https://fluxia-ai.vercel.app",
+        "image": "https://tobiasirigoyen.dev/projects/fluxia.png"
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Wandervista",
+        "description": "Travel and tourism website.",
+        "url": "https://wandervista.com",
+        "image": "https://tobiasirigoyen.dev/projects/wandervista.png"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Critical CSS -->
   <style>
     body {
       margin: 0;
       font-family: Inter, sans-serif;
+      background: #000;
+      color: #fff;
     }
 
     #initial-loader {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      inset: 0;
       background-color: #000;
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      will-change: opacity;
     }
 
     @keyframes blink {
@@ -30,10 +121,7 @@
     }
 
     .blink {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: blink 3s infinite;
+      animation: blink 2.5s infinite;
     }
 
     .motion-btn {
@@ -45,13 +133,10 @@
       cursor: default;
       padding: 0;
       transition: opacity 0.2s ease;
-      position: relative;
-      left: 0;
-      top: 0;
     }
 
     .motion-btn:hover {
-      opacity: 0.8; /* simula whileHover */
+      opacity: 0.85;
     }
 
     .logo-box {
@@ -75,16 +160,24 @@
       font-family: 'Roboto', sans-serif;
       font-weight: 600;
       font-size: 18px;
-      color: #fff;
       letter-spacing: -0.01em;
     }
+
+    /* Dark mode auto */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #fff;
+        color: #000;
+      }
+    }
   </style>
-  <script type="module" crossorigin src="/assets/index-Bp-S8lAZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-Br_pLW9I.css">
+  <script type="module" crossorigin src="/assets/index-BwymQctE.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D9CQNH8S.css">
 </head>
 
 <body>
 
+  <!-- Initial Loader -->
   <div id="initial-loader">
     <div class="blink">
       <button 
@@ -99,7 +192,10 @@
     </div>
   </div>
 
-  <div id="root"></div>
+  <!-- React Root -->
+  <div id="root"></div>
+
+  <!-- Main Script -->
 
 </body>
 </html>

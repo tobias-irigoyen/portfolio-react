@@ -359,7 +359,7 @@ export const testimonials = [
     id: 2,
     name: "Cristian Martinez",
     alt: "Cristian Martinez - Ethofy Tech leader",
-    role: { en: "Tech leader at Ethofy", es: "Tech Lider en Ethofy" },
+    role: { en: "Tech leader at Ethofy", es: "Tech Leader en Ethofy" },
     avatar: "/testimonials/cristian-martinez.jpg",
     quote: {
       en: "I had the privilege of working with Tobías as a technical lead on a project, and I can say with complete confidence that he is an excellent designer. His experience in layout development and UI/UX design is reflected in work that is always polished, well thought out, and aligned with the product’s goals. He is a reliable, creative professional with a consistently positive attitude—qualities that make him a valuable asset to any team.",

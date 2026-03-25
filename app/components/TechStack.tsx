@@ -72,7 +72,7 @@ export function TechStack() {
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '12px',
                   fontWeight: 600,
-                  color: isDark ? '#8a8f98' : '#9ca3af',
+                  color: isDark ? '#ffffffff' : '#1a1a1aff',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                 }}>

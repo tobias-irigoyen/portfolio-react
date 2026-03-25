@@ -261,29 +261,6 @@ export function Hero() {
             <Download size={15} />
             {t.downloadCV}
           </motion.button>
-
-          <motion.button
-            onClick={() => scrollTo('#contact')}
-            whileTap={{ scale: 0.98 }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '13px 24px',
-              borderRadius: '10px',
-              background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
-              border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-              cursor: 'pointer',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              color: isDark ? '#fff' : '#0a0a0a',
-              letterSpacing: '-0.01em',
-            }}
-            className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
-          >
-            {t.ctaSecondary}
-          </motion.button>
         </motion.div>
 
         {/* Scroll indicator */}

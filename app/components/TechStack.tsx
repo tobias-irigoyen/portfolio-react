@@ -8,89 +8,75 @@ export function TechStack() {
   const t = translations[language].stack;
 
   return (
-    <section id="stack" style={{ padding: '120px 24px', position: 'relative' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <section id="stack" className="!py-[120px] !px-6 relative">
+      <div className="!max-w-[1200px] !mx-auto">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          style={{ textAlign: 'center', marginBottom: '72px' }}
+          className="text-center !mb-[72px]"
         >
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '16px'  }}>
-            <div style={{ height: '1px', width: '40px', background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' }} />
-            <span style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '12px',
-              fontWeight: 600,
-              color: '#5e6ad2',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}>
+          <div className="flex items-center justify-center gap-2 !mb-4">
+            <div className={`h-px w-10 ${isDark ? "bg-white/10" : "bg-black/10"}`} />
+            
+            <span className="font-[Inter,sans-serif] text-[12px] font-semibold text-[#5e6ad2] tracking-[0.1em] uppercase">
               Stack
             </span>
-            <div style={{ height: '1px', width: '40px', background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' }} />
+
+            <div className={`h-px w-10 ${isDark ? "bg-white/10" : "bg-black/10"}`} />
           </div>
-          <h2 style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(32px, 5vw, 52px)',
-            fontWeight: 700,
-            color: isDark ? '#fff' : '#0a0a0a',
-            letterSpacing: '-0.03em',
-            lineHeight: 1.1,
-            marginBottom: '14px',
-          }}>
+
+          <h2
+            className={`
+              font-[Inter,sans-serif] text-[clamp(32px,5vw,52px)] font-bold tracking-[-0.03em] leading-[1.1] !mb-[14px]
+              ${isDark ? "text-white" : "text-[#0a0a0a]"}
+            `}
+          >
             {t.title}
           </h2>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '16px',
-            color: isDark ? '#8a8f98' : '#6b7280',
-            letterSpacing: '-0.01em',
-          }}>
+
+          <p
+            className={`
+              font-[Inter,sans-serif] text-[16px] tracking-[-0.01em]
+              ${isDark ? "text-[#8a8f98]" : "text-gray-500"}
+            `}
+          >
             {t.subtitle}
           </p>
         </motion.div>
 
         {/* Categories */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', margin: '0 auto', maxWidth: '75%' }}>
+        <div className="flex flex-col !gap-10 !mx-auto max-w-[75%]">
           {t.categories.map((category, catIndex) => (
             <motion.div
               key={category.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              style={{ display: 'flex', alignItems: 'flex-start', gap: '32px', flexWrap: 'wrap' }}
+              className="flex items-start gap-8 flex-wrap max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-4"
             >
               {/* Category label */}
-              <div style={{
-                minWidth: '120px',
-                paddingTop: '8px',
-              }}>
-                <span style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: isDark ? '#ffffffff' : '#1a1a1aff',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                }}>
+              <div className="min-w-[120px] pt-2">
+                <span
+                  className={`
+                    font-[Inter,sans-serif] text-[12px] font-semibold tracking-[0.08em] uppercase
+                    ${isDark ? "text-white" : "text-[#1a1a1a]"}
+                  `}
+                >
                   {category.name}
                 </span>
               </div>
 
               {/* Divider */}
-              <div style={{
-                width: '1px',
-                background: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)',
-                alignSelf: 'stretch',
-                minHeight: '30px',
-                flexShrink: 0,
-              }} />
+              <div
+                className={`
+                  w-px self-stretch min-h-[30px] shrink-0 ${isDark ? "bg-white/[0.08]" : "bg-black/[0.08]"} max-[440px]:hidden`}
+              />
 
               {/* Tags */}
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', flex: 1 }}>
+              <div className="flex flex-wrap gap-2 flex-1">
                 {category.items.map((item, itemIndex) => (
                   <TechBadge
                     key={item}
@@ -110,21 +96,19 @@ export function TechStack() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{
-            marginTop: '64px',
-            height: '1px',
-            background: isDark
-              ? 'linear-gradient(90deg, transparent, rgba(94,106,210,0.5), rgba(139,92,246,0.5), transparent)'
-              : 'linear-gradient(90deg, transparent, rgba(94,106,210,0.3), rgba(139,92,246,0.3), transparent)',
-            transformOrigin: 'left',
-          }}
+          className={`
+            !mt-16 h-px origin-left
+            ${isDark
+              ? "bg-[linear-gradient(90deg,transparent,rgba(94,106,210,0.5),rgba(139,92,246,0.5),transparent)]"
+              : "bg-[linear-gradient(90deg,transparent,rgba(94,106,210,0.3),rgba(139,92,246,0.3),transparent)]"}
+          `}
         />
       </div>
     </section>
   );
 }
 
-function TechBadge({ label, isDark, delay }: { label: string; isDark: boolean; delay: number }) {
+  function TechBadge({label, isDark, delay}: { label: string; isDark: boolean; delay: number;}) {
   const [hovered, setHovered] = React.useState(false);
 
   return (
@@ -132,25 +116,20 @@ function TechBadge({ label, isDark, delay }: { label: string; isDark: boolean; d
       initial={{ opacity: 0, scale: 0.9 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
+      transition={{ delay }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        padding: '6px 14px',
-        borderRadius: '8px',
-        background: hovered
-          ? 'linear-gradient(135deg, rgba(94,106,210,0.15), rgba(139,92,246,0.15))'
-          : (isDark ? 'rgba(255,255,255,0.05)' : 'rgba(0,0,0,0.04)'),
-        border: `1px solid ${hovered
-          ? 'rgba(94,106,210,0.4)'
-          : (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)')}`,
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '13px',
-        fontWeight: 500,
-        color: hovered ? '#5e6ad2' : (isDark ? '#c4c6cc' : '#374151'),
-        letterSpacing: '-0.01em',
-        cursor: 'default',
-        userSelect: 'none',
-      }}
+      className={`
+        !px-[14px] !py-[6px] rounded-lg text-[13px] font-medium
+        font-[Inter,sans-serif] tracking-[-0.01em]
+        select-none cursor-default
+        ${hovered
+          ? "bg-[linear-gradient(135deg,rgba(94,106,210,0.15),rgba(139,92,246,0.15))] border border-[rgba(94,106,210,0.4)] text-[#5e6ad2]"
+          : `${isDark 
+              ? "bg-white/5 border border-white/[0.08] text-[#c4c6cc]" 
+              : "bg-black/[0.04] border border-black/[0.08] text-gray-700"}`
+        }
+      `}
     >
       {label}
     </motion.div>

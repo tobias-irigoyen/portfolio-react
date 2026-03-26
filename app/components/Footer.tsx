@@ -15,72 +15,32 @@ export function Footer() {
   ];
 
   return (
-    <footer style={{
-      padding: '40px 24px',
-      borderTop: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.08)'}`,
-      position: 'relative',
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        gap: '20px',
-      }}>
+    <footer className={`!py-10 !px-6 relative ${isDark ? "border-t border-white/[0.06]" : "border-t border-black/[0.08]"}`}>
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-5 max-[768px]:flex-col max-[768px]:text-center">
         {/* Left */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <div style={{
-            width: '24px',
-            height: '24px',
-            borderRadius: '6px',
-            background: 'linear-gradient(135deg, #5e6ad2, #8b5cf6)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-            <span style={{ color: '#fff', fontSize: '11px', fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>T</span>
+        <div className="flex items-center gap-3">
+          <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#5e6ad2] to-[#8b5cf6] flex items-center justify-center">
+            <span className="text-white text-[11px] font-bold font-[Inter,sans-serif]">T</span>
           </div>
-          <span style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '13px',
-            color: isDark ? '#8a8f98' : '#6b7280',
-            letterSpacing: '-0.01em',
-          }}>
+          <span className={`font-[Inter,sans-serif] text-[13px] tracking-[-0.01em] ${isDark ? "text-[#8a8f98]" : "text-gray-500"}`}>
             © {year} Tobías Irigoyen · {t.rights}
           </span>
         </div>
 
         {/* Center */}
-        <span style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '12px',
-          color: isDark ? 'rgba(138,143,152,1)' : '#6b7280',
-          letterSpacing: '-0.01em',
-        }}>
+        <span className={`font-[Inter,sans-serif] text-[12px] tracking-[-0.01em] ${isDark ? "text-[rgba(138,143,152,1)]" : "text-gray-500"}`}>
           {t.builtWith}
         </span>
 
         {/* Right - Social */}
-        <div style={{ display: 'flex', gap: '4px' }}>
+        <div className="flex gap-1">
           {links.map(link => (
             <motion.a
               key={link.label}
               href={link.href}
               aria-label={link.label}
               whileHover={{ y: -2 }}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '34px',
-                height: '34px',
-                borderRadius: '8px',
-                color: isDark ? '#8a8f98' : '#6b7280',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease, background 0.2s ease',
-              }}
+              className={`flex items-center justify-center w-[34px] h-[34px] rounded-lg no-underline transition-colors duration-200 ${isDark ? "text-[#8a8f98]" : "text-gray-500"}`}
               onMouseEnter={e => {
                 e.currentTarget.style.background = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)';
                 e.currentTarget.style.color = isDark ? '#fff' : '#0a0a0a';

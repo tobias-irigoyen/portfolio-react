@@ -58,7 +58,7 @@ export function TechStack() {
               className="flex items-start gap-8 flex-wrap max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-4"
             >
               {/* Category label */}
-              <div className="min-w-[120px] pt-2">
+              <div className="min-w-[160px] pt-2">
                 <span
                   className={`
                     font-[Inter,sans-serif] text-[12px] font-semibold tracking-[0.08em] uppercase

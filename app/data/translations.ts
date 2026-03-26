@@ -75,11 +75,15 @@ export const translations = {
       categories: [
         {
           name: 'Frontend',
-          items: ['React', 'Vue.js', 'HTML5', 'CSS3', 'TypeScript', 'JavaScript'],
+          items: ['React', 'Vue.js', 'Angular', 'TypeScript', 'JavaScript (ES6+', 'HTML5', 'CSS3'],
         },
         {
-          name: 'Styling',
-          items: ['TailwindCSS', 'Bootstrap', 'Sass', 'CSS Modules'],
+          name: 'Styles & UI',
+          items: ['TailwindCSS', 'Bootstrap', 'Sass'],
+        },
+        {
+          name: 'Tools & Build',
+          items: ['Vite', 'Node.js', 'Git', 'npm', 'Webpack'],
         },
         {
           name: 'AI Tools',
@@ -87,18 +91,18 @@ export const translations = {
         },
         {
           name: 'Testing',
-          items: ['Jest', 'Vitest', 'Cypress', 'Testing Library'],
+          items: ['Cypress', 'Vitest', 'ESLint', 'Unit Testing', 'E2E Testing'],
         },
         {
-          name: 'Design',
-          items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Design Systems', 'Prototyping'],
+          name: 'UI/UX & Performance',
+          items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Design Systems', 'Prototyping', 'UX Research', 'A/B Testing', 'Accessibility (WCAG)', 'Core Web Vitals'],
         },
         {
           name: 'Process',
-          items: ['UX Research', 'A/B Testing', 'Accessibility (WCAG)', 'Agile / Scrum'],
+          items: ['Agile', 'Scrum'],
         },
         {
-          name: 'Deployment',
+          name: 'Deployment & CI/CD',
           items: ['Vercel', 'Netlify']
         },
       ],
@@ -232,11 +236,15 @@ export const translations = {
       categories: [
         {
           name: 'Frontend',
-          items: ['React', 'Vue.js', 'Next.js', 'JavaScript (ES6+)','TypeScript' ,'HTML5' ],
+          items: ['React', 'Vue.js', 'Angular', 'TypeScript', 'JavaScript (ES6+', 'HTML5', 'CSS3'],
         },
         {
-          name: 'Estilos',
-          items: ['Tailwind CSS', 'Bootstrap', 'Sass', 'CSS Modules','CSS3'],
+          name: 'Estilos & UI',
+          items: ['TailwindCSS', 'Bootstrap', 'Sass'],
+        },
+        {
+          name: 'Herramientas & Build',
+          items: ['Vite', 'Node.js', 'Git', 'npm', 'Webpack'],
         },
         {
           name: 'IA Tools',
@@ -244,18 +252,18 @@ export const translations = {
         },
         {
           name: 'Testing',
-          items: ['Jest', 'Vitest', 'Cypress', 'Testing Library'],
+          items: ['Cypress', 'Vitest', 'ESLint', 'Unit Testing', 'E2E Testing'],
         },
         {
-          name: 'Diseño',
-          items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Design Systems', 'Prototipado'],
+          name: 'UI/UX & Performance',
+          items: ['Figma', 'Adobe Illustrator', 'Adobe Photoshop', 'Design Systems', 'Prototyping', 'UX Research', 'A/B Testing', 'Accessibility (WCAG)', 'Core Web Vitals'],
         },
         {
-          name: 'Proceso',
-          items: ['Investigación UX', 'A/B Testing', 'Accesibilidad (WCAG)', 'Agile / Scrum'],
+          name: 'Procesos',
+          items: ['Agile', 'Scrum'],
         },
         {
-          name: 'Despliegue',
+          name: 'Deployment & CI/CD',
           items: ['Vercel', 'Netlify']
         },
       ],

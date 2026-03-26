@@ -16,7 +16,7 @@ export function Footer() {
 
   return (
     <footer className={`!py-10 !px-6 relative ${isDark ? "border-t border-white/[0.06]" : "border-t border-black/[0.08]"}`}>
-      <div className="max-w-[1200px] mx-auto flex items-center justify-between flex-wrap gap-5 max-[768px]:flex-col max-[768px]:text-center">
+      <div className="max-w-[1200px] !mx-auto flex items-center justify-between flex-wrap gap-5 max-[768px]:flex-col max-[768px]:text-center">
         {/* Left */}
         <div className="flex items-center gap-3">
           <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#5e6ad2] to-[#8b5cf6] flex items-center justify-center">

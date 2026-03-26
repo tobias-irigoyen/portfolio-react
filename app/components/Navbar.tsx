@@ -113,7 +113,7 @@ export function Navbar() {
                   onClick={() => setLangOpen(p => !p)}
                   whileHover={{ opacity: 0.8 }}
                   className={`
-                    flex items-center gap-1 !px-2.5 !py-1.5 rounded-lg border text-[13px]
+                    flex items-center gap-1 !px-2.5 !py-1.5 rounded-lg border text-[13px] cursor-pointer
                     ${isDark
                       ? "bg-white/5 border-white/10 text-[#8a8f98]"
                       : "bg-black/5 border-black/10 text-gray-500"}
@@ -130,7 +130,7 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: -8, scale: 0.95 }}
                       className={`
-                        absolute right-0 !mt-2 p-1 rounded-xl border shadow-xl z-[200]
+                        absolute right-0 !mt-2 p-1 rounded-xl border shadow-xl z-[200] cursor-pointer
                         ${isDark
                           ? "bg-[#111] border-white/10"
                           : "bg-white border-black/10"}
@@ -162,7 +162,7 @@ export function Navbar() {
                 onClick={toggleTheme}
                 whileTap={{ scale: 0.95 }}
                 className={`
-                  w-9 h-9 flex items-center justify-center rounded-lg border
+                  w-9 h-9 flex items-center justify-center rounded-lg border cursor-pointer
                   ${isDark
                     ? "bg-white/5 border-white/10 text-[#8a8f98]"
                     : "bg-black/5 border-black/10 text-gray-500"}

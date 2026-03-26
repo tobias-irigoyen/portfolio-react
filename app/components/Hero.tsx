@@ -130,7 +130,7 @@ export function Hero() {
             className="inline-flex items-center gap-2 !px-6 !py-[13px] rounded-[10px] text-sm font-semibold text-white tracking-[-0.01em]
               bg-gradient-to-br from-[#5e6ad2] to-[#7c3aed]
               border border-transparent hover:border-[#bbb9ff]
-              transition-all duration-300"
+              transition-all duration-300 cursor-pointer"
           >
             {t.cta}
             <ArrowRight size={15} />
@@ -140,7 +140,7 @@ export function Hero() {
             onClick={downloadCV}
             whileTap={{ scale: 0.98 }}
             className={`inline-flex items-center gap-2 !px-6 !py-[13px] rounded-[10px] text-sm font-semibold tracking-[-0.01em]
-              border transition-all duration-300
+              border transition-all duration-300 cursor-pointer
               ${isDark 
                 ? "bg-white/5 border-white/10 text-white hover:bg-black hover:border-[#6d6d6d]" 
                 : "bg-black/5 border-black/10 text-black hover:bg-black hover:text-white hover:border-[#6d6d6d]"}

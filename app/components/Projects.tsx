@@ -13,56 +13,35 @@ export function Projects() {
 
   return (
     <>
-      <section id="work" style={{ padding: '120px 24px', position: 'relative' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <section id="work" className="!py-[120px] !px-6 relative">
+        <div className="max-w-[1200px] !mx-auto">
+
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6 }}
-            style={{ marginBottom: '64px' }}
+            className="!mb-16"
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-              <span style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '12px',
-                fontWeight: 600,
-                color: '#5e6ad2',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-              }}>
+            <div className="flex items-center gap-2 !mb-4">
+              <span className="text-[12px] font-semibold text-[#5e6ad2] tracking-[0.1em] uppercase">
                 Work
               </span>
-              <div style={{ height: '1px', width: '40px', background: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)' }} />
+              <div className={`h-[1px] w-10 ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
             </div>
-            <h2 style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 'clamp(32px, 5vw, 52px)',
-              fontWeight: 700,
-              color: isDark ? '#fff' : '#0a0a0a',
-              letterSpacing: '-0.03em',
-              lineHeight: 1.1,
-              marginBottom: '14px',
-            }}>
+
+            <h2 className={`font-semibold text-[clamp(32px,5vw,52px)] tracking-[-0.03em] leading-[1.1] !mb-3 ${isDark ? 'text-white' : 'text-[#0a0a0a]'}`}>
               {t.title}
             </h2>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '16px',
-              color: isDark ? '#8a8f98' : '#6b7280',
-              letterSpacing: '-0.01em',
-            }}>
+
+            <p className={`text-[16px] tracking-[-0.01em] ${isDark ? 'text-[#8a8f98]' : 'text-[#6b7280]'}`}>
               {t.subtitle}
             </p>
           </motion.div>
 
           {/* Grid */}
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
-            gap: '16px',
-          }}>
+          <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(340px,1fr))]">
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.id}
@@ -92,7 +71,6 @@ export function Projects() {
     </>
   );
 }
-
 function ProjectCard({
   project, index, isDark, language, viewLabel, onClick,
 }: {
@@ -114,127 +92,67 @@ function ProjectCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}
-      style={{
-        borderRadius: '14px',
-        background: isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)',
-        border: `1px solid ${hovered
-          ? (isDark ? 'rgba(94,106,210,0.35)' : 'rgba(94,106,210,0.3)')
-          : (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)')}`,
-        overflow: 'hidden',
-        cursor: 'pointer',
-        transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease',
-        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
-        boxShadow: hovered
-          ? (isDark ? '0 20px 60px rgba(0,0,0,0.4)' : '0 20px 60px rgba(0,0,0,0.1)')
-          : 'none',
-      }}
+      className={`
+        rounded-[14px] overflow-hidden cursor-pointer transition-all duration-200
+        ${hovered ? '-translate-y-1' : ''}
+        ${isDark ? 'bg-white/[0.03]' : 'bg-black/[0.02]'}
+        ${
+          hovered
+            ? isDark
+              ? 'border border-indigo-400/40 shadow-[0_20px_60px_rgba(0,0,0,0.4)]'
+              : 'border border-indigo-400/30 shadow-[0_20px_60px_rgba(0,0,0,0.1)]'
+            : isDark
+              ? 'border border-white/10'
+              : 'border border-black/10'
+        }
+      `}
     >
       {/* Image */}
-      <div style={{
-        position: 'relative',
-        paddingBottom: '56.25%',
-        overflow: 'hidden',
-        background: isDark ? '#111' : '#f0f0f0',
-      }}>
+      <div className={`relative !pt-[56.25%] overflow-hidden ${isDark ? 'bg-[#111]' : 'bg-[#f0f0f0]'}`}>
         <img
           src={project.images[0]}
           alt={project.title}
-          style={{
-            position: 'absolute',
-            top: 0, left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            transition: 'transform 0.4s ease',
-            transform: hovered ? 'scale(1.04)' : 'scale(1)',
-          }}
+          className={`absolute inset-0 w-full h-full object-cover transition-transform duration-300 ${hovered ? 'scale-105' : ''}`}
         />
+
         {/* Overlay */}
-        <div style={{
-          position: 'absolute',
-          inset: 0,
-          background: isDark
-            ? 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)'
-            : 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.35) 100%)',
-          opacity: hovered ? 1 : 0,
-          transition: 'opacity 0.3s ease',
-          display: 'flex',
-          alignItems: 'flex-end',
-          padding: '16px',
-        }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '7px 14px',
-            borderRadius: '8px',
-            background: 'rgba(255,255,255,0.15)',
-            backdropFilter: 'blur(8px)',
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '13px',
-            fontWeight: 600,
-            color: '#fff',
-          }}>
+        <div className={`
+          absolute inset-0 flex items-end !p-4 transition-opacity duration-300
+          ${hovered ? 'opacity-100' : 'opacity-0'}
+          ${isDark
+            ? 'bg-gradient-to-b from-transparent to-black/60'
+            : 'bg-gradient-to-b from-transparent to-black/35'}
+        `}>
+          <div className="flex items-center gap-1.5 !px-[14px] !py-[7px] rounded-lg bg-white/20 backdrop-blur text-white text-[13px] font-semibold">
             {viewLabel}
             <ArrowRight size={13} />
           </div>
         </div>
 
         {/* Year badge */}
-        <div style={{
-          position: 'absolute',
-          top: '12px',
-          right: '12px',
-          padding: '4px 10px',
-          borderRadius: '6px',
-          background: 'rgba(0,0,0,0.5)',
-          backdropFilter: 'blur(8px)',
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '11px',
-          fontWeight: 500,
-          color: 'rgba(255,255,255,0.8)',
-          letterSpacing: '0.02em',
-        }}>
+        <div className="absolute top-3 right-3 !px-[10px] !py-[4px] rounded-md bg-black/50 backdrop-blur text-[11px] text-white/80">
           {project.year}
         </div>
       </div>
 
       {/* Content */}
-      <div style={{ padding: '20px 20px 22px' }}>
-        <h3 style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '16px',
-          fontWeight: 650,
-          color: isDark ? '#fff' : '#0a0a0a',
-          letterSpacing: '-0.02em',
-          marginBottom: '6px',
-        }}>
+      <div className="!px-5 !pt-5 !pb-[22px]">
+        <h3 className={`text-[16px] font-[650] tracking-[-0.02em] !mb-1 ${isDark ? 'text-white' : 'text-[#0a0a0a]'}`}>
           {project.title}
         </h3>
-        <p style={{
-          fontFamily: 'Inter, sans-serif',
-          fontSize: '13px',
-          color: isDark ? '#8a8f98' : '#6b7280',
-          lineHeight: 1.6,
-          marginBottom: '14px',
-          letterSpacing: '-0.005em',
-        }}>
+
+        <p className={`text-[13px] leading-[1.6] !mb-3 tracking-[-0.005em] ${isDark ? 'text-[#8a8f98]' : 'text-[#6b7280]'}`}>
           {project.shortDesc[language]}
         </p>
 
         {/* Tags */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+        <div className="flex flex-wrap gap-[6px]">
           {project.tags.slice(0, 3).map(tag => (
-            <span key={tag} style={{
-              padding: '3px 8px',
-              borderRadius: '5px',
-              background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '11px',
-              fontWeight: 500,
-              color: isDark ? '#8a8f98' : '#6b7280',
-              letterSpacing: '0.01em',
-            }}>
+            <span
+              key={tag}
+              className={`!px-[8px] !py-[3px] rounded-[5px] text-[11px] font-medium tracking-[0.01em]
+                ${isDark ? 'bg-white/10 text-[#8a8f98]' : 'bg-black/5 text-[#6b7280]'}`}
+            >
               {tag}
             </span>
           ))}
@@ -264,15 +182,17 @@ function ProjectModal({
     emblaApi.on('select', () => setCurrent(emblaApi.selectedScrollSnap()));
   }, [emblaApi]);
 
-  // Lock body scroll
+  // Lock scroll
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => { document.body.style.overflow = ''; };
   }, []);
 
-  // Escape key
+  // ESC
   useEffect(() => {
-    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [onClose]);
@@ -292,157 +212,103 @@ function ProjectModal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.2 }}
       onClick={onClose}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        zIndex: 1000,
-        background: 'rgba(0,0,0,0.75)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '24px',
-        overflowY: 'auto',
-      }}
+      className="fixed inset-0 z-[1000] bg-black/75 backdrop-blur flex items-center justify-center !p-6 overflow-y-auto"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.96, y: 20 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         exit={{ opacity: 0, scale: 0.96, y: 20 }}
-        transition={{ duration: 0.25, ease: [0.25, 0.46, 0.45, 0.94] }}
-        onClick={e => e.stopPropagation()}
-        style={{
-          background: isDark ? '#0d0d0d' : '#ffffff',
-          borderRadius: '18px',
-          border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-          width: '100%',
-          maxWidth: '760px',
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          boxShadow: '0 40px 100px rgba(0,0,0,0.5)',
-        }}
+        transition={{ duration: 0.25 }}
+        onClick={(e) => e.stopPropagation()}
+        className={`
+          w-full max-w-[760px] max-h-[90vh] overflow-y-auto rounded-[18px]
+          ${isDark ? 'bg-[#0d0d0d] border border-white/10' : 'bg-white border border-black/10'}
+          shadow-[0_40px_100px_rgba(0,0,0,0.5)]
+        `}
       >
-        {/* Image Carousel */}
-        <div style={{ position: 'relative' }}>
-          <div ref={emblaRef} style={{ overflow: 'hidden', borderRadius: '18px 18px 0 0' }}>
-            <div style={{ display: 'flex' }}>
+        {/* Carousel */}
+        <div className="relative">
+          <div ref={emblaRef} className="overflow-hidden rounded-t-[18px]">
+            <div className="flex">
               {project.images.map((img, i) => (
-                <div key={i} style={{ flex: '0 0 100%', minWidth: 0 }}>
+                <div key={i} className="flex-[0_0_100%] min-w-0">
                   <img
                     src={img}
                     alt={`${project.title} ${i + 1}`}
-                    style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block' }}
+                    className="w-full h-auto object-cover block"
                   />
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Nav buttons */}
+          {/* Arrows */}
           {project.images.length > 1 && (
             <>
               <button
                 onClick={scrollPrev}
-                style={{
-                  position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)',
-                  width: '36px', height: '36px', borderRadius: '50%',
-                  background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(255,255,255,0.15)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', color: '#fff',
-                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 backdrop-blur border border-white/20 flex items-center justify-center text-white"
               >
                 <ChevronLeft size={18} />
               </button>
+
               <button
                 onClick={scrollNext}
-                style={{
-                  position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)',
-                  width: '36px', height: '36px', borderRadius: '50%',
-                  background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)',
-                  border: '1px solid rgba(255,255,255,0.15)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  cursor: 'pointer', color: '#fff',
-                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 backdrop-blur border border-white/20 flex items-center justify-center text-white"
               >
                 <ChevronRight size={18} />
               </button>
 
               {/* Dots */}
-              <div style={{
-                position: 'absolute', bottom: '12px', left: '50%', transform: 'translateX(-50%)',
-                display: 'flex', gap: '6px',
-              }}>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
                 {project.images.map((_, i) => (
-                  <div key={i} style={{
-                    width: i === current ? '20px' : '6px',
-                    height: '6px',
-                    borderRadius: '3px',
-                    background: i === current ? '#fff' : 'rgba(255,255,255,0.4)',
-                    transition: 'all 0.2s ease',
-                  }} />
+                  <div
+                    key={i}
+                    className={`
+                      h-[6px] rounded-[3px] transition-all duration-200
+                      ${i === current ? 'w-5 bg-white' : 'w-[6px] bg-white/40'}
+                    `}
+                  />
                 ))}
               </div>
             </>
           )}
 
-          {/* Close button */}
+          {/* Close */}
           <button
             onClick={onClose}
-            style={{
-              position: 'absolute', top: '16px', right: '16px',
-              width: '32px', height: '32px', borderRadius: '50%',
-              background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              cursor: 'pointer', color: '#fff',
-            }}
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/50 backdrop-blur border border-white/20 flex items-center justify-center text-white"
           >
             <X size={15} />
           </button>
         </div>
 
         {/* Content */}
-        <div style={{ padding: '32px' }}>
-          {/* Meta */}
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px', marginBottom: '24px' }}>
+        <div className="!p-8">
+          {/* Header */}
+          <div className="flex flex-wrap items-start justify-between gap-3 !mb-6">
             <div>
-              <h2 style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '24px',
-                fontWeight: 700,
-                color: isDark ? '#fff' : '#0a0a0a',
-                letterSpacing: '-0.03em',
-                marginBottom: '4px',
-              }}>
+              <h2 className={`text-[24px] font-bold tracking-[-0.03em] !mb-1 ${isDark ? 'text-white' : 'text-black'}`}>
                 {project.title}
               </h2>
-              <p style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '13px',
-                color: isDark ? '#8a8f98' : '#6b7280',
-              }}>
+              <p className={`text-[13px] ${isDark ? 'text-[#8a8f98]' : 'text-[#6b7280]'}`}>
                 {project.role[language]} · {project.year}
               </p>
             </div>
+
             {project.link && (
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: '6px',
-                  padding: '8px 14px', borderRadius: '8px',
-                  background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)',
-                  border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-                  fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 500,
-                  color: isDark ? '#e6e6e6ff' : '#6b7280',
-                  textDecoration: 'none',
-                }}
-                className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
+                className={`
+                  flex items-center gap-1.5 !px-3 !py-2 rounded-lg text-[13px] font-medium
+                  ${isDark
+                    ? 'bg-white/10 border border-white/10 text-white'
+                    : 'bg-black/5 border border-black/10 text-gray-600'}
+                  hover:bg-black hover:border-white hover:text-white transition-all duration-300
+                `}
               >
                 {t.visitSite}
                 <ExternalLink size={12} />
@@ -451,46 +317,34 @@ function ProjectModal({
           </div>
 
           {/* Divider */}
-          <div style={{ height: '1px', background: isDark ? 'rgba(255,255,255,0.07)' : 'rgba(233, 233, 233, 0.07)', marginBottom: '24px' }} />
+          <div className={`h-[1px] !mb-6 ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
 
           {/* Description */}
-          <div style={{ marginBottom: '28px' }}>
+          <div className="!mb-7">
             {paragraphs.map((para, i) => (
-              <p key={i} style={{
-                fontFamily: 'Inter, sans-serif',
-                fontSize: '15px',
-                color: isDark ? '#c4c6cc' : '#374151',
-                lineHeight: 1.7,
-                marginBottom: i < paragraphs.length - 1 ? '16px' : 0,
-                letterSpacing: '-0.005em',
-              }}>
+              <p
+                key={i}
+                className={`text-[15px] leading-[1.7] !mb-4 tracking-[-0.005em]
+                  ${isDark ? 'text-[#c4c6cc]' : 'text-[#374151]'}`}
+              >
                 {para}
               </p>
             ))}
           </div>
 
-          {/* Technologies */}
-          <div style={{ marginBottom: '32px' }}>
-            <p style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '11px',
-              fontWeight: 600,
-              color: isDark ? '#8a8f98' : '#9ca3af',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              marginBottom: '10px',
-            }}>
+          {/* Tech */}
+          <div className="!mb-8">
+            <p className={`text-[11px] font-semibold uppercase tracking-[0.08em] !mb-2.5 ${isDark ? 'text-[#8a8f98]' : 'text-gray-400'}`}>
               {t.technologies}
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+
+            <div className="flex flex-wrap gap-1.5">
               {project.tags.map(tag => (
-                <span key={tag} style={{
-                  padding: '4px 10px', borderRadius: '6px',
-                  background: isDark ? 'rgba(94,106,210,0.12)' : 'rgba(94,106,210,0.08)',
-                  border: `1px solid ${isDark ? 'rgba(94,106,210,0.25)' : 'rgba(94,106,210,0.2)'}`,
-                  fontFamily: 'Inter, sans-serif', fontSize: '12px', fontWeight: 500,
-                  color: '#5e6ad2',
-                }}>
+                <span
+                  key={tag}
+                  className="!px-[10px] !py-[4px] rounded-md text-[12px] font-medium text-[#5e6ad2]
+                  bg-indigo-500/10 border border-indigo-500/30"
+                >
                   {tag}
                 </span>
               ))}
@@ -498,47 +352,26 @@ function ProjectModal({
           </div>
 
           {/* CTA */}
-          <div style={{
-            borderRadius: '12px',
-            background: isDark
-              ? 'linear-gradient(135deg, rgba(94,106,210,0.1), rgba(139,92,246,0.1))'
-              : 'linear-gradient(135deg, rgba(94,106,210,0.06), rgba(139,92,246,0.06))',
-            border: `1px solid ${isDark ? 'rgba(94,106,210,0.2)' : 'rgba(94,106,210,0.15)'}`,
-            padding: '24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            gap: '16px',
-            flexWrap: 'wrap',
-          }}>
+          <div className={`
+            rounded-xl !p-6 flex flex-wrap items-center justify-between gap-4
+            ${isDark
+              ? 'bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/20'
+              : 'bg-gradient-to-br from-indigo-500/5 to-purple-500/5 border border-indigo-500/15'}
+          `}>
             <div>
-              <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: '15px', fontWeight: 600,
-                color: isDark ? '#fff' : '#0a0a0a', letterSpacing: '-0.02em', marginBottom: '4px',
-              }}>
+              <p className={`text-[15px] font-semibold !mb-1 ${isDark ? 'text-white' : 'text-black'}`}>
                 {t.contactTitle}
               </p>
-              <p style={{
-                fontFamily: 'Inter, sans-serif', fontSize: '13px',
-                color: isDark ? '#8a8f98' : '#6b7280',
-              }}>
+              <p className={`text-[13px] ${isDark ? 'text-[#8a8f98]' : 'text-[#6b7280]'}`}>
                 {t.contactDesc}
               </p>
             </div>
+
             <motion.button
               onClick={scrollToContact}
-              whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                padding: '11px 20px', borderRadius: '9px',
-                background: 'linear-gradient(135deg, #5e6ad2, #7c3aed)',
-                border: 'none', cursor: 'pointer',
-                fontFamily: 'Inter, sans-serif', fontSize: '13px', fontWeight: 600,
-                color: '#fff', letterSpacing: '-0.01em',
-                boxShadow: '0 4px 16px rgba(94,106,210,0.35)',
-                whiteSpace: 'nowrap',
-              }}
+              className="flex items-center gap-2 !px-5 !py-2.5 rounded-lg text-[13px] font-semibold text-white cursor-pointer
+              bg-gradient-to-br from-indigo-500 to-purple-600 shadow-[0_4px_16px_rgba(94,106,210,0.35)]"
             >
               <MessageCircle size={14} />
               {t.contactCta}

@@ -10,8 +10,12 @@ const iconMap: Record<string, React.ReactNode> = {
   Layers: <Layers size={20} />,
   MonitorPlay: <MonitorPlay size={20} />,
   Accessibility: (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="16" cy="4" r="1" /><path d="m18 19 1-7-6 1" /><path d="m5 8 3-3 5.5 3-2.36 3.5" /><path d="M4.24 14.5a5 5 0 0 0 6.88 6" /><path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <circle cx="16" cy="4" r="1" />
+      <path d="m18 19 1-7-6 1" />
+      <path d="m5 8 3-3 5.5 3-2.36 3.5" />
+      <path d="M4.24 14.5a5 5 0 0 0 6.88 6" />
+      <path d="M13.76 17.5a5 5 0 0 0-6.88-6" />
     </svg>
   ),
   BarChart2: <BarChart2 size={20} />,
@@ -28,52 +32,35 @@ export function Services() {
   const { isDark, language } = useApp();
   const t = translations[language].services;
 
-  const cardBg = isDark ? 'rgba(255,255,255,0.03)' : 'rgba(0,0,0,0.02)';
-  const cardHoverBg = isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)';
-
   return (
-    <section id="services" style={{ padding: '120px 24px', position: 'relative' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        {/* Header */}
+    <section id="services" className="!py-[120px] !px-6 relative">
+      <div className="max-w-[1200px] !mx-auto">
+        
+        {/* Header */}|
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{ marginBottom: '64px' }}
+          className="!mb-16"
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-            <span style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '12px',
-              fontWeight: 600,
-              color: '#5e6ad2',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-            }}>
+          <div className="flex items-center gap-2 !mb-4">
+            <span className="text-[12px] font-semibold tracking-[0.1em] uppercase text-[#5e6ad2]">
               Services
             </span>
-            <div style={{ flex: 1, height: '1px', background: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)', maxWidth: '40px' }} />
+            <div className={`flex-1 h-px max-w-[40px] ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
           </div>
-          <h2 style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(32px, 5vw, 52px)',
-            fontWeight: 700,
-            color: isDark ? '#fff' : '#0a0a0a',
-            letterSpacing: '-0.03em',
-            lineHeight: 1.1,
-            marginBottom: '16px',
-          }}>
+
+          <h2 className={`font-bold leading-[1.1] !mb-4 tracking-[-0.03em]
+            text-[clamp(32px,5vw,52px)]
+            ${isDark ? 'text-white' : 'text-[#0a0a0a]'}
+          `}>
             {t.title}
           </h2>
-          <p style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '16px',
-            color: isDark ? '#8a8f98' : '#6b7280',
-            maxWidth: '480px',
-            lineHeight: 1.6,
-            letterSpacing: '-0.01em'
-          }}>
+
+          <p className={`text-[16px] max-w-[480px] leading-[1.6] tracking-[-0.01em]
+            ${isDark ? 'text-[#8a8f98]' : 'text-gray-500'}
+          `}>
             {t.subtitle}
           </p>
         </motion.div>
@@ -84,36 +71,29 @@ export function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '1px',
-            background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.07)',
-            borderRadius: '16px',
-            overflow: 'hidden',
-            border: `1px solid ${isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.07)'}`,
-          }}
+          className={`
+            grid gap-[1px] rounded-[16px] overflow-hidden
+            [grid-template-columns:repeat(auto-fill,minmax(320px,1fr))]
+            ${isDark ? 'bg-white/5 border border-white/10' : 'bg-black/10 border border-black/10'}
+          `}
         >
           {t.items.map((service) => (
             <ServiceCard
               key={service.id}
               service={service}
               isDark={isDark}
-              cardBg={cardBg}
-              cardHoverBg={cardHoverBg}
             />
           ))}
         </motion.div>
+
       </div>
     </section>
   );
 }
 
-function ServiceCard({ service, isDark, cardBg, cardHoverBg }: {
+function ServiceCard({ service, isDark }: {
   service: any;
   isDark: boolean;
-  cardBg: string;
-  cardHoverBg: string;
 }) {
   const [hovered, setHovered] = React.useState(false);
 
@@ -125,65 +105,41 @@ function ServiceCard({ service, isDark, cardBg, cardHoverBg }: {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      style={{
-        padding: '32px',
-        background: hovered ? cardHoverBg : cardBg,
-        cursor: 'default',
-        transition: 'background 0.2s ease',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
+      className={`
+        relative overflow-hidden !p-8 cursor-default transition-all duration-200
+        ${hovered
+          ? (isDark ? 'bg-white/5' : 'bg-black/5')
+          : (isDark ? 'bg-white/[0.03]' : 'bg-black/[0.02]')
+        }
+      `}
     >
-      {/* Hover glow */}
+      {/* Glow */}
       {hovered && (
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(94,106,210,0.5), transparent)',
-        }} />
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#5e6ad2]/50 to-transparent" />
       )}
 
       {/* Icon */}
-      <div style={{
-        width: '40px',
-        height: '40px',
-        borderRadius: '10px',
-        background: hovered
-          ? 'linear-gradient(135deg, rgba(94,106,210,0.2), rgba(139,92,246,0.2))'
-          : (isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.05)'),
-        border: `1px solid ${hovered ? 'rgba(94,106,210,0.3)' : (isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.08)')}`,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginBottom: '20px',
-        color: hovered ? '#5e6ad2' : (isDark ? '#8a8f98' : '#6b7280'),
-        transition: 'all 0.2s ease',
-      }}>
+      <div className={`
+        w-10 h-10 rounded-[10px] flex items-center justify-center !mb-5 transition-all duration-200
+        ${hovered
+          ? 'bg-gradient-to-br from-[#5e6ad2]/20 to-[#8b5cf6]/20 border border-[#5e6ad2]/30 text-[#5e6ad2]'
+          : `${isDark
+              ? 'bg-white/10 border border-white/10 text-[#8a8f98]'
+              : 'bg-black/5 border border-black/10 text-gray-500'}`
+        }
+      `}>
         {iconMap[service.icon]}
       </div>
 
-      <h3 style={{
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '15px',
-        fontWeight: 600,
-        color: isDark ? '#fff' : '#0a0a0a',
-        letterSpacing: '-0.02em',
-        marginBottom: '10px',
-        lineHeight: 1.3,
-      }}>
+      <h3 className={`text-[15px] font-semibold !mb-2.5 leading-[1.3] tracking-[-0.02em]
+        ${isDark ? 'text-white' : 'text-[#0a0a0a]'}
+      `}>
         {service.title}
       </h3>
-      <p style={{
-        fontFamily: 'Inter, sans-serif',
-        fontSize: '14px',
-        color: isDark ? '#8a8f98' : '#6b7280',
-        lineHeight: 1.65,
-        letterSpacing: '-0.005em',
-        whiteSpace: 'pre-line'
-      }}>
+
+      <p className={`text-[14px] leading-[1.65] tracking-[-0.005em] whitespace-pre-line
+        ${isDark ? 'text-[#8a8f98]' : 'text-gray-500'}
+      `}>
         {service.description}
       </p>
     </motion.div>

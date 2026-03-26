@@ -174,7 +174,7 @@ export function Contact() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className={`rounded-[16px] p-[48px_32px] text-center border ${isDark ? "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.08)]" : "bg-[rgba(0,0,0,0.02)] border-[rgba(0,0,0,0.08)]"}`}
+                className={`rounded-[16px] !p-[48px_32px] text-center border ${isDark ? "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.08)]" : "bg-[rgba(0,0,0,0.02)] border-[rgba(0,0,0,0.08)]"}`}
               >
                 <div className="w-[56px] h-[56px] rounded-full bg-[rgba(94,210,130,0.15)] flex items-center justify-center mx-auto !mb-[20px] text-[#5ed282]">
                   <CheckCircle size={28} />
@@ -205,7 +205,7 @@ export function Contact() {
             ) : (
               <form onSubmit={handleSubmit}>
                 <div
-                  className={`p-8 rounded-2xl flex flex-col gap-5 ${isDark ? "bg-white/[0.02] border border-white/[0.08]" : "bg-black/[0.02] border border-black/[0.08]"}`}
+                  className={`!p-8 rounded-2xl flex flex-col gap-5 ${isDark ? "bg-white/[0.02] border border-white/[0.08]" : "bg-black/[0.02] border border-black/[0.08]"}`}
                 >
                   <div className="grid grid-cols-2 gap-4 form-row">
                     <div>

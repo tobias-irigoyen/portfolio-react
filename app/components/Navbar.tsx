@@ -13,11 +13,43 @@ export function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
+  const navLinks = [
+    { label: t.services, href: '#services', id: 'services' },
+    { label: t.stack, href: '#stack', id: 'stack' },
+    { label: t.work, href: '#work', id: 'work' },
+    { label: t.testimonials, href: '#testimonials', id: 'testimonials' },
+    { label: t.contact, href: '#contact', id: 'contact' },
+  ];
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean) as Element[];
+    
+    const observerOptions = {
+      rootMargin: '-20% 0px -70% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          setActiveSection(sectionId);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section));
+    };
+  }, [navLinks]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -31,14 +63,6 @@ export function Navbar() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [langOpen]);
-
-  const navLinks = [
-    { label: t.services, href: '#services', id: 'services' },
-    { label: t.stack, href: '#stack', id: 'stack' },
-    { label: t.work, href: '#work', id: 'work' },
-    { label: t.testimonials, href: '#testimonials', id: 'testimonials' },
-    { label: t.contact, href: '#contact', id: 'contact' },
-  ];
 
   const scrollTo = (href: string, sectionId: string) => {
     const el = document.querySelector(href);

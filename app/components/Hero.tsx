@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, Download } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { translations } from '../data/translations';
 
@@ -9,6 +9,7 @@ const roles = ['Frontend Engineer', 'UI/UX Designer'];
 export function Hero() {
   const { isDark, language } = useApp();
   const t = translations[language].hero;
+
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState('');
   const [deleting, setDeleting] = useState(false);
@@ -39,80 +40,41 @@ export function Hero() {
   const downloadCV = () => {
     const link = document.createElement('a');
     link.href = language === 'es' ? '/Tobías Irigoyen - CV.pdf' : '/Tobías Irigoyen - Resume.pdf';
-    link.download = language === 'es' ? 'Tobías Irigoyen - CV.pdf' : 'Tobías Irigoyen - Resume.pdf';
+    link.download = link.href;
     link.click();
   };
 
   return (
-    <section style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center md:flex-start',
-      justifyContent: 'center',
-      position: 'relative',
-      overflow: 'hidden',
-      padding: '120px 24px 80px',
-    }}>
+    <section className="!min-h-screen flex items-center md:items-start justify-center relative overflow-hidden !pt-[120px] !pb-[80px] !px-6">
+      
       {/* Gradient orbs */}
-      <div style={{
-        position: 'absolute',
-        top: '20%',
-        left: '15%',
-        width: '500px',
-        height: '500px',
-        borderRadius: '50%',
-        background: isDark
-          ? 'radial-gradient(circle, rgba(94,106,210,0.12) 0%, transparent 70%)'
-          : 'radial-gradient(circle, rgba(94,106,210,0.08) 0%, transparent 70%)',
-        pointerEvents: 'none',
-        filter: 'blur(40px)',
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '25%',
-        right: '10%',
-        width: '400px',
-        height: '400px',
-        borderRadius: '50%',
-        background: isDark
-          ? 'radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 70%)'
-          : 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)',
-        pointerEvents: 'none',
-        filter: 'blur(40px)',
-      }} />
+      <div className={`absolute top-[20%] left-[15%] w-[500px] h-[500px] rounded-full pointer-events-none blur-[40px]
+        ${isDark 
+          ? "bg-[radial-gradient(circle,rgba(94,106,210,0.12)_0%,transparent_70%)]" 
+          : "bg-[radial-gradient(circle,rgba(94,106,210,0.08)_0%,transparent_70%)]"}
+      `} />
 
-      <div style={{ maxWidth: '900px', width: '100%', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+      <div className={`absolute bottom-[25%] right-[10%] w-[400px] h-[400px] rounded-full pointer-events-none blur-[40px]
+        ${isDark 
+          ? "bg-[radial-gradient(circle,rgba(139,92,246,0.1)_0%,transparent_70%)]" 
+          : "bg-[radial-gradient(circle,rgba(139,92,246,0.06)_0%,transparent_70%)]"}
+      `} />
+
+      <div className="max-w-[900px] w-full text-center relative z-10 max-[576px]:h-[80vh] h-[82vh]">
+
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{ display: 'flex', justifyContent: 'center', marginBottom: '32px' }}
+          className="flex justify-center !mb-8"
         >
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '6px 14px',
-            borderRadius: '999px',
-            background: isDark ? 'rgba(94,106,210,0.12)' : 'rgba(94,106,210,0.08)',
-            border: `1px solid ${isDark ? 'rgba(94,106,210,0.3)' : 'rgba(94,106,210,0.2)'}`,
-          }}>
-            <div style={{
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              background: '#5e6ad2',
-              boxShadow: '0 0 6px rgba(94,106,210,0.8)',
-              animation: 'pulse-dot 2s ease-in-out infinite',
-            }} />
-            <span style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '12px',
-              fontWeight: 500,
-              color: '#5e6ad2',
-              letterSpacing: '0.02em',
-            }}>
+          <div className={`inline-flex items-center !gap-1.5 !px-[14px] !py-[6px] rounded-full border
+            ${isDark 
+              ? "bg-[rgba(94,106,210,0.12)] border-[rgba(94,106,210,0.3)]" 
+              : "bg-[rgba(94,106,210,0.08)] border-[rgba(94,106,210,0.2)]"}
+          `}>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#5e6ad2] shadow-[0_0_6px_rgba(94,106,210,0.8)] animate-pulse" />
+            <span className="text-[12px] font-medium text-[#5e6ad2] tracking-[0.02em] font-[Inter,sans-serif]">
               {t.badge}
             </span>
           </div>
@@ -122,15 +84,9 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: '18px',
-            fontWeight: 400,
-            color: isDark ? '#8a8f98' : '#6b7280',
-            marginBottom: '12px',
-            letterSpacing: '-0.01em',
-          }}
+          className={`text-[18px] !mb-3 tracking-[-0.01em] font-[Inter,sans-serif]
+            ${isDark ? "text-[#8a8f98]" : "text-gray-500"}
+          `}
         >
           {t.greeting}
         </motion.p>
@@ -139,203 +95,90 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(52px, 8vw, 96px)',
-            fontWeight: 800,
-            color: isDark ? '#ffffff' : '#3b3b3bff',
-            letterSpacing: '-0.04em',
-            lineHeight: 1.2,
-            marginBottom: '16px'
-          }}
+          className={`text-[clamp(52px,8vw,96px)] font-extrabold tracking-[-0.04em] leading-[1.2] !mb-4 font-[Inter,sans-serif]
+            ${isDark ? "text-white" : "text-[#3b3b3b]"}
+          `}
         >
           {t.name}
         </motion.h1>
 
-        {/* Animated Role */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45 }}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '10px',
-            marginBottom: '32px',
-            height: '48px',
-          }}
-        >
-          <span style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(20px, 3vw, 28px)',
-            fontWeight: 500,
-            color: isDark ? '#8a8f98' : '#6b7280',
-            letterSpacing: '-0.02em',
-          }}>
+        {/* Role */}
+        <motion.div className="flex items-center justify-center gap-2.5 !mb-8 h-[48px]">
+          <span className={`text-[clamp(20px,3vw,28px)] tracking-[-0.02em] font-medium font-[Inter,sans-serif]
+            ${isDark ? "text-[#8a8f98]" : "text-gray-500"}
+          `}>
             {displayed}
-            <span style={{
-              display: 'inline-block',
-              width: '2px',
-              height: '1em',
-              background: '#5e6ad2',
-              marginLeft: '2px',
-              verticalAlign: 'middle',
-              animation: 'blink-cursor 1s step-end infinite',
-            }} />
+            <span className="inline-block w-[2px] h-[1em] ml-[2px] align-middle bg-[#5e6ad2] animate-[blink_1s_step-end_infinite]" />
           </span>
         </motion.div>
 
         {/* Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
-          style={{
-            fontFamily: 'Inter, sans-serif',
-            fontSize: 'clamp(16px, 2vw, 18px)',
-            fontWeight: 400,
-            color: isDark ? '#8a8f98' : '#6b7280',
-            lineHeight: 1.7,
-            maxWidth: '560px',
-            margin: '0 auto 48px',
-            letterSpacing: '-0.01em',
-          }}
+          className={`text-[clamp(16px,2vw,18px)] leading-[1.7] max-w-[560px] !mx-auto !mb-12 tracking-[-0.01em] font-[Inter,sans-serif]
+            ${isDark ? "text-[#8a8f98]" : "text-gray-500"}
+          `}
         >
           {t.description}
         </motion.p>
 
         {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.65 }}
-          style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}
-        >
+        <motion.div className="flex gap-3 max-[576px]:gap-8 justify-center flex-wrap">
+          
           <motion.button
             onClick={() => scrollTo('#work')}
             whileTap={{ scale: 0.98 }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '13px 24px',
-              borderRadius: '10px',
-              background: isDark
-                ? 'linear-gradient(135deg, #5e6ad2, #7c3aed)'
-                : 'linear-gradient(135deg, #5e6ad2, #7c3aed)',
-              cursor: 'pointer',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              color: '#fff',
-              letterSpacing: '-0.01em'
-            }}
-            className="border border-transparent hover:border-[#bbb9ff] transition-all duration-[300ms]"
+            className="inline-flex items-center gap-2 !px-6 !py-[13px] rounded-[10px] text-sm font-semibold text-white tracking-[-0.01em]
+              bg-gradient-to-br from-[#5e6ad2] to-[#7c3aed]
+              border border-transparent hover:border-[#bbb9ff]
+              transition-all duration-300"
           >
             {t.cta}
             <ArrowRight size={15} />
           </motion.button>
 
           <motion.button
-            onClick={() => downloadCV()}
+            onClick={downloadCV}
             whileTap={{ scale: 0.98 }}
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              padding: '13px 24px',
-              borderRadius: '10px',
-              background: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
-              border: `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}`,
-              cursor: 'pointer',
-              fontFamily: 'Inter, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              color: isDark ? '#fff' : '#0a0a0a',
-              letterSpacing: '-0.01em',
-            }}
-            className="hover:!bg-black hover:!text-white hover:!border hover:!border-[#6d6d6dff] transition-all duration-[300ms]"
+            className={`inline-flex items-center gap-2 !px-6 !py-[13px] rounded-[10px] text-sm font-semibold tracking-[-0.01em]
+              border transition-all duration-300
+              ${isDark 
+                ? "bg-white/5 border-white/10 text-white hover:bg-black hover:border-[#6d6d6d]" 
+                : "bg-black/5 border-black/10 text-black hover:bg-black hover:text-white hover:border-[#6d6d6d]"}
+            `}
           >
             <Download size={15} />
             {t.downloadCV}
           </motion.button>
+
         </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
           onClick={() => scrollTo('#services')}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          id="scroll-indicator"
-          style={{
-            cursor: 'pointer',
-            position: 'absolute',
-            left: '50%',
-            bottom: '10px',
-            transform: 'translateX(-50%)',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '8px',
-          }}
+          className="absolute left-1/2 bottom-[10px] md:bottom-[50px] -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer group"
         >
           <motion.div
             animate={{ y: [0, 15, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-            style={{
-              width: '22px',
-              height: '36px',
-              borderRadius: '11px',
-              border: `2px solid ${isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)'}`,
-              display: 'flex',
-              justifyContent: 'center',
-              paddingTop: '6px',
-            }}
+            transition={{ repeat: Infinity, duration: 1.8 }}
+            className={`w-[22px] h-[36px] rounded-full border-2 flex justify-center !pt-1.5
+              ${isDark ? "border-white/30" : "border-black/30"}
+              group-hover:border-[#5e6ad2] transition-colors`}
           >
-            <div id="mouse-wheel" style={{
-              width: '3px',
-              height: '8px',
-              borderRadius: '2px',
-              background: isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.3)',
-            }}
+            <div className={`w-[3px] h-[8px] rounded-sm
+              ${isDark ? "bg-white/30" : "bg-black/30"}
+              group-hover:bg-[#5e6ad2] transition-colors`}
             />
           </motion.div>
         </motion.div>
+
       </div>
 
       <style>{`
-        #scroll-indicator {
-          transition: all 300ms ease-in-out;
-      }
-        #scroll-indicator:hover > div {
-          transition: border-color 200ms ease-in-out;
-          border-color: rgb(94, 106, 210) !important;
-        }
-
-        #scroll-indicator:hover #mouse-wheel {
-          transition: background-color 200ms ease-in-out;
-          background-color: rgb(94, 106, 210) !important;
-        }
-        @keyframes blink-cursor {
-          0%, 100% { opacity: 1; }
+        @keyframes blink {
+          0%,100% { opacity: 1; }
           50% { opacity: 0; }
         }
-        @keyframes pulse-dot {
-          0%, 100% { box-shadow: 0 0 6px rgba(94,106,210,0.8); }
-          50% { box-shadow: 0 0 12px rgba(94,106,210,1); }
-        }
-          
-      @media (max-width: 768px) {
-        #scroll-indicator {
-          bottom: 50px!important;
-        }
-      }
-      `
-      }
-      </style>
+      `}</style>
     </section>
   );
 }

@@ -69,11 +69,9 @@ export const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
                   color: '#fff',
                   fontSize: '16px',
                   fontWeight: 700,
-                  fontFamily: 'Roboto, sans-serif',
                 }}>A</span>
               </div>
               <span style={{
-                fontFamily: 'Roboto, sans-serif',
                 fontWeight: 600,
                 fontSize: '18px',
                 letterSpacing: '-0.01em',

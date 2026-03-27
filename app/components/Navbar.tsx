@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Sun, Moon, Menu, X, Globe } from 'lucide-react';
 import { useApp, Language } from '../context/AppContext';
 import { translations } from '../data/translations';
@@ -28,10 +28,12 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = navLinks.map(link => document.querySelector(link.href)).filter(Boolean) as Element[];
+    // Include hero section in observation
+    const heroSection = document.querySelector('section') || document.querySelector('[class*="hero"]');
+    const sections = [heroSection, ...navLinks.map(link => document.querySelector(link.href))].filter(Boolean) as Element[];
     
     const observerOptions = {
-      rootMargin: '-20% 0px -70% 0px',
+      rootMargin: '-25% 0px -60% 0px',
       threshold: 0
     };
 
@@ -40,6 +42,15 @@ export function Navbar() {
         if (entry.isIntersecting) {
           const sectionId = entry.target.id;
           setActiveSection(sectionId);
+          
+          // If hero section is active, clear the URL
+          if (!sectionId || entry.target === heroSection) {
+            window.history.pushState({}, '', '/');
+          } else {
+            // Update URL without the # symbol
+            const newUrl = `/${sectionId}`;
+            window.history.pushState({}, '', newUrl);
+          }
         }
       });
     }, observerOptions);

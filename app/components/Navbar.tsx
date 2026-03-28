@@ -27,6 +27,32 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Scroll to section on page load if slug exists
+  useEffect(() => {
+    const path = window.location.pathname.replace('/', '');
+    const slugToId: Record<string, string> = {
+      services: 'services',
+      servicios: 'services',
+      stack: 'stack',
+      work: 'work',
+      trabajos: 'work',
+      testimonials: 'testimonials',
+      resenas: 'testimonials',
+      contact: 'contact',
+      contacto: 'contact',
+    };
+    
+    if (path && slugToId[path]) {
+      const sectionId = slugToId[path];
+      const element = document.getElementById(sectionId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'auto' });
+        }, 100);
+      }
+    }
+  }, []);
+
   useEffect(() => {
     // Include hero section in observation
     const heroSection = document.querySelector('section') || document.querySelector('[class*="hero"]');

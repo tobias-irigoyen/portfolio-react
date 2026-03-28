@@ -31,7 +31,7 @@ export function Contact() {
     const hours = gmt3Time.getHours();
 
     // Set status based on time: 'Inactive' after 20:00 and 'Active' before
-    return hours >= 19 ? t.inactiveStatus : t.activeStatus;
+    return hours >= 19 || hours < 8 ? t.inactiveStatus : t.activeStatus;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

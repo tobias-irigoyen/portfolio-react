@@ -105,7 +105,7 @@ export function Navbar() {
             <motion.button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ opacity: 0.8 }}
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 hover:cursor-pointer"
             >
               <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-[#5e6ad2] to-[#8b5cf6] flex items-center justify-center">
                 <span className="text-white text-[13px] font-bold font-[Inter,sans-serif]">T</span>
@@ -183,8 +183,8 @@ export function Navbar() {
                             hover:bg-black/10
                           `}
                         >
-                          <span>{lang === 'en' ? '🇺🇸' : '🇪🇸'}</span>
-                          <span>{lang === 'en' ? 'English' : 'Español'}</span>
+                          <span className="cursor-pointer hover:text-[#5e6ad2]">{lang === 'en' ? '🇺🇸' : '🇪🇸'}</span>
+                          <span className="cursor-pointer hover:text-[#5e6ad2]">{lang === 'en' ? 'English' : 'Español'}</span>
                         </button>
                       ))}
                     </motion.div>

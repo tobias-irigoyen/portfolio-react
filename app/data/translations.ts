@@ -143,6 +143,8 @@ export const translations = {
       sent: 'Message sent!',
       activeStatus: 'Available',
       inactiveStatus: 'Unavailable',
+      formResponseValue: 'I will send a response to your inquiry within the next 2 hours.',
+      sendAnotherMessage: 'Send another message',
       info: {
         emailLabel: 'Email',
         emailValue: 'tobias.irigoyen@gmail.com',
@@ -304,6 +306,8 @@ export const translations = {
       sent: '¡Mensaje enviado!',
       activeStatus: 'Activo',
       inactiveStatus: 'No disponible',
+      formResponseValue:'Enviaré una respuesta a tu consulta dentro de las siguientes 2 horas.',
+      sendAnotherMessage: 'Enviar otro mensaje',
       info: {
         emailLabel: 'Email',
         emailValue: 'tobias.irigoyen@gmail.com',

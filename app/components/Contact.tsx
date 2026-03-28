@@ -31,7 +31,7 @@ export function Contact() {
     const hours = gmt3Time.getHours();
 
     // Set status based on time: 'Inactive' after 20:00 and 'Active' before
-    return hours >= 22 ? t.inactiveStatus : t.activeStatus;
+    return hours >= 19 ? t.inactiveStatus : t.activeStatus;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -176,11 +176,11 @@ export function Contact() {
                 animate={{ opacity: 1, scale: 1 }}
                 className={`rounded-[16px] !p-[48px_32px] text-center border ${isDark ? "bg-[rgba(255,255,255,0.03)] border-[rgba(255,255,255,0.08)]" : "bg-[rgba(0,0,0,0.02)] border-[rgba(0,0,0,0.08)]"}`}
               >
-                <div className="w-[56px] h-[56px] rounded-full bg-[rgba(94,210,130,0.15)] flex items-center justify-center mx-auto !mb-[20px] text-[#5ed282]">
+                <div className="w-[56px] h-[56px] rounded-full bg-[rgba(94,210,130,0.15)] flex items-center justify-center !mx-auto !mb-[20px] text-[#5ed282]">
                   <CheckCircle size={28} />
                 </div>
                 <p
-                  className="font-sans font-[700] text-[20px] tracking-[-0.02em] !mb-[8px]"
+                  className="font-sans font-[700] text-[20px] tracking-[-0.02em] !mb-[20px]"
                   style={{
                     color: isDark ? "#fff" : "#0a0a0a",
                   }}
@@ -193,13 +193,16 @@ export function Contact() {
                     color: isDark ? "#8a8f98" : "#6b7280",
                   }}
                 >
-                  {t.info.responseValue}
+                  {t.formResponseValue}
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className={`mt-[24px] !px-[20px] !py-[9px] rounded-[8px] cursor-pointer font-sans text-[13px] font-[500] ${isDark ? "bg-white/10 border border-white/10 text-[#8a8f98]" : "bg-black/5 border border-black/10 text-gray-500"}`}
+                  className={`!mt-[24px] !px-[20px] !py-[9px] rounded-[8px] cursor-pointer font-sans text-[13px] font-[500] shadow-[0_4px_20px_rgba(94,106,210,0.3)] transition-colors duration-200 cursor-pointer bg-gradient-to-br from-[#5e6ad2] to-[#7c3aed] border hover:border hover:border-white`}
+
+
+                  
                 >
-                  Send another
+                   {t.sendAnotherMessage}
                 </button>
               </motion.div>
             ) : (

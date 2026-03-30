@@ -14,10 +14,7 @@ export function Testimonials() {
       <div className="max-w-[1200px] !mx-auto">
         
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+        <div
           className="text-center !mb-16"
         >
           <div className="flex items-center justify-center gap-2 !mb-4">
@@ -43,7 +40,7 @@ export function Testimonials() {
           `}>
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Grid */}
         <div className="
@@ -81,9 +78,10 @@ function TestimonialCard({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ y: 20 }}
+      whileInView={{ y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
+      transition={{ duration: 0.2, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`

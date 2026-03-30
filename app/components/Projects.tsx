@@ -19,14 +19,10 @@ export function Projects() {
       <section id="work" className="!py-[120px] !px-6 relative">
         <div className="max-w-[1200px] !mx-auto">
 
-          {/* Header */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="!mb-16"
-          >
+        {/* Header */}
+        <div
+          className="!mb-16"
+        >
             <div className="flex items-center gap-2 !mb-4">
               <span className="text-[12px] font-semibold text-[#5e6ad2] tracking-[0.1em] uppercase">
                 Work
@@ -41,7 +37,7 @@ export function Projects() {
             <p className={`text-[16px] tracking-[-0.01em] ${isDark ? 'text-[#8a8f98]' : 'text-[#6b7280]'}`}>
               {t.subtitle}
             </p>
-          </motion.div>
+          </div>
 
           {/* Grid */}
           <div className="grid gap-4 [grid-template-columns:repeat(auto-fill,minmax(340px,1fr))]">
@@ -93,9 +89,9 @@ function ProjectCard({
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.05 }}
+      initial={{ y: 20 }}
+      animate={isInView ? { y: 0 } : {}}
+      transition={{ duration: 0.2, delay: index * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={onClick}

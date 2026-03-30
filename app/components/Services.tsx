@@ -24,8 +24,13 @@ const iconMap: Record<string, React.ReactNode> = {
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.05, delayChildren: 0.05 },
   },
+};
+
+const cardVariants = {
+  hidden: { y: 20 },
+  visible: { y: 0, transition: { duration: 0.1 } },
 };
 
 export function Services() {
@@ -37,11 +42,7 @@ export function Services() {
       <div className="max-w-[1200px] !mx-auto">
         
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        <div
           className="!mb-16"
         >
           <div className="flex items-center gap-2 !mb-4">
@@ -63,7 +64,7 @@ export function Services() {
           `}>
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Grid */}
         <motion.div
@@ -99,10 +100,7 @@ function ServiceCard({ service, isDark }: {
 
   return (
     <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 24 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] } },
-      }}
+      variants={cardVariants}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={`

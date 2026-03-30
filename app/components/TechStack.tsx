@@ -11,11 +11,7 @@ export function TechStack() {
     <section id="stack" className="!py-[120px] !px-6 relative">
       <div className="!max-w-[1200px] !mx-auto">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
+        <div
           className="text-center !mb-[72px]"
         >
           <div className="flex items-center justify-center gap-2 !mb-4">
@@ -45,16 +41,13 @@ export function TechStack() {
           >
             {t.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* Categories */}
         <div className="flex flex-col !gap-10 !mx-auto max-w-[75%]">
           {t.categories.map((category, catIndex) => (
-            <motion.div
+            <div
               key={category.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
               className="flex items-start gap-8 flex-wrap max-[440px]:flex-col max-[440px]:items-start max-[440px]:gap-4"
             >
               {/* Category label */}
@@ -86,7 +79,7 @@ export function TechStack() {
                   />
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

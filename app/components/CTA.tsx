@@ -32,11 +32,7 @@ export function CTA() {
       style={{ padding: "80px 24px", position: "relative", overflow: "hidden" }}
     >
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        <div
           className={`rounded-3xl relative overflow-hidden text-center !p-[clamp(48px,8vw,96px)] !px-[clamp(32px,6vw,80px)] border ${isDark ? "border-[rgba(94,106,210,0.2)]" : "border-[rgba(94,106,210,0.15)]"}`}
           style={{
             background: isDark
@@ -121,7 +117,7 @@ export function CTA() {
               </motion.button>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -165,10 +165,10 @@ export function Contact() {
         >
           {/* Form */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ x: -20 }}
+            whileInView={{ x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
           >
             {status === "sent" ? (
               <motion.div
@@ -310,10 +310,10 @@ export function Contact() {
 
           {/* Info */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ x: 20 }}
+            whileInView={{ x: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.5 }}
             className="flex flex-col gap-[12px]"
           >
             {infoItems.map((item, i) => (
